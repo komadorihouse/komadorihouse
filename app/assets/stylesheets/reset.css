@@ -47,6 +47,18 @@ td {
   margin:0;
   padding:0;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited,
+a:link{
+  color: inherit;
+}
+
+
+
 table {
   border-collapse:collapse;
   border-spacing:0;
