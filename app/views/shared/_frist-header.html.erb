@@ -1,0 +1,22 @@
+<header class='frist-header'>
+  <div class="title-info">
+    <%= link_to image_tag('komadorihouse_kana.png',id:"rogo-kana" ),'/' %>
+    <%= link_to image_tag('komadorihouse_rogo_black.png',id:"rogo-image") ,'/' %>
+    <div class="info">
+      <div class="info-text">
+          <%= @info %>
+      </div>
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li class="menu-font"><%= link_to "Works",works_works_path %></li>
+      <li class="menu-font"><%= link_to "Profile",profile_works_path %></li>
+      <li class="menu-font"><%= link_to "Contact",contact_works_path %></li>
+      <li class="menu-font"><%= link_to "Link" ,link_works_path %></li>
+    </ul>
+  </div>
+  <div class="image-area">
+    
+  <div>
+</header>
