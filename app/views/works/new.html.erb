@@ -21,7 +21,7 @@
       </div>
       <div class="inner-box">
         <%= f.label "作者名",for:"artist_id" %><span class="emphasis">必須</span>
-        <%= f.collection_select(:artist_id, Author.all, :id, :name, {}, {class:"works-text", id:"artist"}) %>
+        <%= f.collection_select(:artist_id, Creater.all, :id, :name, {}, {class:"works-text", id:"artist"}) %>
       </div>
       <div class="inner-box">
         <%= f.label "ジャンル",for:"type_id" %><span class="emphasis">必須</span>

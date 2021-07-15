@@ -4,6 +4,6 @@ class Work < ApplicationRecord
   validates :artist_id,    numericality: { other_than: 0} 
   validates :type_id,      numericality: { other_than: 0} 
 
-  belongs_to :type
-  belongs_to :author
+  belongs_to_active_hash :type
+  belongs_to_active_hash :creater
 end

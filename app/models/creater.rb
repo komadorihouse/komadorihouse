@@ -1,4 +1,8 @@
-class Author < ActiveHash::Base
+class Creater < ActiveHash::Base
+  include ActiveHash::Associations
+
+  has_many :works
+
   self.data = [
     { id: 0, name: '--' },
     { id: 1, name: 'おの たくや' },
