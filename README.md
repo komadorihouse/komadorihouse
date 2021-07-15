@@ -6,7 +6,8 @@ work
 |------------|-------|----------|
 |title       |string |null:false|
 |image       |string |          |
-|text        |text   |          |
+|description |text   |          |
+|youtube     |string |          |
 |created_year|integer|          |
-|artist      |string |null:fales|
-|type        |integer|null:false|
+|artist_id   |integer|null:fales|
+|type_id     |integer|null:false|

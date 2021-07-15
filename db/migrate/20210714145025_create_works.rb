@@ -4,8 +4,9 @@ class CreateWorks < ActiveRecord::Migration[6.0]
       t.string :title, null: false
       t.string :image
       t.text :description
+      t.string :youtube
       t.integer :created_year
-      t.string :artist, null: false
+      t.integer :artist_id, null: false
       t.integer :type_id, null: false
       t.timestamps
     end

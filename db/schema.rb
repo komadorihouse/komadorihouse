@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 2021_07_14_145025) do
     t.string "title", null: false
     t.string "image"
     t.text "description"
+    t.string "youtube"
     t.integer "created_year"
-    t.string "artist", null: false
+    t.integer "artist_id", null: false
     t.integer "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

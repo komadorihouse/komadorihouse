@@ -9,15 +9,11 @@
     </div>
     <div class="index-contents">
       <ul class="contents-lists">
+      <% @works.each do |work| %>
         <li class="contents-list">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
+          <span class="title-work"><%= work.title %></span><span class="date-work"><%= work.created_year %></span>
         </li>
-        <li class="contents-list">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </li>
-        <li class="contents-list">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </li>
+      <% end %>
       </ul>
     </div>
   </div>
@@ -27,68 +23,18 @@
       All Works
     </div>
     <div class="contents-body">
-
+      <% @works.each do |work| %>
       <div class="content">
         <div>
-          <%= image_tag('buntyo.jpg',class:"content-image") %>
+          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"content-image") ,work_path(work.id)%>
         </div>
         <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
+          <span class="title-work"><%= work.title %></span><span class="date-work"><%= work.created_year %></span>
         </div>
       </div>
+      <% end %>
 
-      <div class="content">
-        <%= image_tag('furinka.jpg',class:"content-image") %>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <%= image_tag('kinariiro.png',class:"content-image") %>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <%= image_tag('http://drive.google.com/uc?export=view&id=1gp8ovpCiIhE9krYvi3x1hHRVYs7dmrwa',class:"content-image") %>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="content-image">
-        </div>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="content-image">
-        </div>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="content-image">
-        </div>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="content-image">
-        </div>
-        <div class="content-title">
-          <span class="title-work">作品名</span><span class="date-work">2021</span>
-        </div>
-      </div>
+     
 
     <div>
   </div>

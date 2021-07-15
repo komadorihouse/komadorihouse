@@ -1,0 +1,9 @@
+<div class="header">
+  <%= render "shared/frist-header"%>
+</div>
+
+<div class="body">
+  <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@work.image}") %>
+  <%= @work.created_year %>
+  <%= @work.description %>
+</div>
