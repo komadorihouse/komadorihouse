@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      work:
+        title: 作品名
+        artist: 作者名
+        type_id: ジャンル

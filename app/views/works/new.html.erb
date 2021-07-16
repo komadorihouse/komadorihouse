@@ -1,0 +1,34 @@
+<div class="header">
+  <%= render "shared/frist-header"%>
+</div>
+<div class="form-body">
+  作品登録
+  <%= form_with(model: @work, data: { remote: false}) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <div class="works-form">
+    <%= f.label "作品名",for:"title" %><span class="emphasis">必須</span>
+    <%= f.text_field :title, class:"works-text", id:"title" ,placeholder:"作品名" %>
+    <%= f.label "Googleドライブ画像のリンク",for:"image" %>
+    <%= f.text_area :image, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
+    <%= f.label "作品の説明",for:"description" %>
+    <%= f.text_area :description, class:"works-text", id:"text" ,placeholder:"作品の説明" %>
+    <%= f.label "Youtubeのリンク",for:"youtube" %>
+    <%= f.text_area :youtube, class:"works-text", id:"youtube" ,placeholder:"youtubeのリンク" %>
+    <div class="box01">
+      <div class="inner-box">
+        <%= f.label "制作年",for:"created_year" %> 
+        <%= f.text_field :created_year, class:"works-text", id:"year" ,placeholder:"2021", maxlength:"4" %>
+      </div>
+      <div class="inner-box">
+        <%= f.label "作者名",for:"artist_id" %><span class="emphasis">必須</span>
+        <%= f.collection_select(:artist_id, Creater.all, :id, :name, {}, {class:"works-text", id:"artist"}) %>
+      </div>
+      <div class="inner-box">
+        <%= f.label "ジャンル",for:"type_id" %><span class="emphasis">必須</span>
+        <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"works-text", id:"type-id"}) %>  
+      </div>
+    </div>
+    <%= f.submit "作品を登録" ,class:"works-text" %>
+  </div>
+  <% end %>
+</div>
