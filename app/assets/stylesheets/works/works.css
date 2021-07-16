@@ -56,6 +56,7 @@
   margin-right: 20px;
   margin-bottom: 30px;
   display: block;
+  overflow-wrap: break-all;
 }
 
 
@@ -67,3 +68,7 @@
   background-color: rgb(145, 145, 145);
 }
 
+.content-title{
+  width: 200px;
+  height: 48px;
+}

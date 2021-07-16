@@ -26,7 +26,7 @@ class WorksController < ApplicationController
   def show
     @work = Work.find(params[:id])
     @creater = Creater.find(@work.artist_id).name
-    @info = @work.title
+    @info = "#{Creater.find(@work.artist_id).name} の作品"
   end
 
   def profile
