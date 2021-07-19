@@ -20,10 +20,10 @@
         </div>
       </div>
       <% end %>
-      <%= paginate @works %>
-
-     
-
-    <div>
+    </div>
+    <%= paginate @works, :param_name => 'contents' %>
   </div>
+</div>
+<div class="footer-area">
+  <%= render "shared/footer"%>
 </div>

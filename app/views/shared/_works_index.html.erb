@@ -4,7 +4,7 @@
     </div>
     <div class="index-contents">
       <ul class="contents-lists">
-      <% @works.each do |work| %>
+      <% @workslist.each do |work| %>
         <li class="contents-list">
           <span class="title-work">
           <%= link_to work.title ,work_path(work.id) %>
@@ -16,4 +16,5 @@
       <% end %>
       </ul>
     </div>
+    <%= paginate @workslist, :param_name => 'index' %>
 </div>

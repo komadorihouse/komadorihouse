@@ -20,14 +20,22 @@ class WorksController < ApplicationController
     end
   end
 
+  def edit
+    @workbox = Work.find(params[:id])
+  end
+
+  def update
+  end
+
   def works
     @info = "Works"
-    @works = Work.page(params[:page]).per(5)
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @works = Work.page(params[:contents]).per(5).order('created_year DESC')
     @work = Work.find(7)
   end
 
   def show
-    @works = Work.all.order(created_year: 'DESC')
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @work = Work.find(params[:id])
     @creater = Creater.find(@work.artist_id).name
     @info = @work.title
