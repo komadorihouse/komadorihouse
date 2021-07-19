@@ -2,19 +2,36 @@
   <%= render "shared/frist-header"%>
 </div>
 
-<div class="work-body">
-  <% if @work.type_id == 3 %>
-    <iframe width="900" height="506.25" src="https://www.youtube.com/embed/<%= @work.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <% else %>
-    <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@work.image}"),id:"work-image" %>
-  <% end %>
-  <div>
-    creater: <%= @creater %>
+<div class="body">
+<%# ここから左辺の目次欄 %>
+  <%= render "shared/works_index"%>
+  <%# ここからメインコンテンツ表示域 %>
+<div class="works-contents">
+  <div class="works-info">
+      Overview
   </div>
-  <div>
-    <%= @work.created_year %>年制作
+    <div class="contents-body">
+      <ul>
+        <li>
+          <span class="small">creater -</span> <%= @creater %>
+        </li>
+        <li>
+          <span class="small">created yaer -</span> <%= @work.created_year %>
+        </li>
+        <li class="description">
+          <%= @work.description %>
+        </li>
+        <li>
+          <% if @work.type_id == 3 %>
+            <iframe width="900" height="506.25" src="https://www.youtube.com/embed/<%= @work.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% else %>
+            <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@work.image}"),id:"work-image" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <%= @work.description %>
-  </div>
+</div>
+<div class="footer-area">
+  <%= render "shared/footer"%>
 </div>

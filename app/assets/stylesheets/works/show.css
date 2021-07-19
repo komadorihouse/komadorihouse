@@ -1,5 +1,60 @@
-.work-body {
+.body {
   padding-left: 100px;
+}
+
+.index{
+  width: 200px;
+  font-family: 'Prompt', sans-serif;
+}
+
+.index-title {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(72, 72, 72);
+  margin-bottom: 35px;
+}
+
+.contents-list {
+  vertical-align:baseline;
+}
+
+.title-work{
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.title-work:hover{
+  color: darkorange;
+}
+
+.date-work {
+  font-size: 10px;
+  color: rgb(106, 106, 106);
+  margin-left: 4px;
+}
+
+.works-contents{
+  margin: 0px 0px 0px 70px;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100% - 280px);
+  padding: 0px 0px 0px 10px;
+}
+
+.works-info{
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.small{
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.description{
+  width: 900px;
+  color: #333333;
+  font-size: 14px;
+  margin: 35px 0px;
 }
 
 #work-image {

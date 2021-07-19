@@ -1,43 +1,58 @@
 class WorksController < ApplicationController
   def index
+    @work = Work.find(7)
     @info = "News"
   end
 
   def new
-    @work = Work.new
+    @work = Work.find(2)
+    @workbox = Work.new
   end
 
   def create
-    @work = Work.new(work_params)
-    @work.image.slice!("https://drive.google.com/file/d/")
-    @work.image.slice!("/view?usp=sharing")
-    @work.youtube.slice!("https://www.youtube.com/watch?v=")
-    if @work.save
+    @workbox = Work.new(work_params)
+    @workbox.image.slice!("https://drive.google.com/file/d/")
+    @workbox.image.slice!("/view?usp=sharing")
+    @workbox.youtube.slice!("https://www.youtube.com/watch?v=")
+    if @workbox.save
     else
       render :new
     end
   end
 
+  def edit
+    @workbox = Work.find(params[:id])
+  end
+
+  def update
+  end
+
   def works
     @info = "Works"
-    @works = Work.all.order(created_year: 'DESC')
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @works = Work.page(params[:contents]).per(5).order('created_year DESC')
+    @work = Work.find(7)
   end
 
   def show
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @work = Work.find(params[:id])
     @creater = Creater.find(@work.artist_id).name
-    @info = "#{Creater.find(@work.artist_id).name} の作品"
+    @info = @work.title
   end
 
   def profile
+    @work = Work.find(1)
     @info = "Profile"
   end
 
   def contact
+    @work = Work.find(1)
     @info = "Contact"
   end
   
   def link
+    @work = Work.find(1)
     @info = "Link"
   end
 
