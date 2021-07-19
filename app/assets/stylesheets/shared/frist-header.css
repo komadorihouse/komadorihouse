@@ -47,6 +47,7 @@
   width: 710px;
   height: 250px;
   margin-left: 50px;
+  object-fit: cover; 
 }
 
 .info{

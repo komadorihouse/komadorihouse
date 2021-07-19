@@ -3,7 +3,7 @@
 </div>
 <div class="form-body">
   作品登録
-  <%= form_with(model: @work, data: { remote: false}) do |f| %>
+  <%= form_with(model: @workbox, data: { remote: false}) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
   <div class="works-form">
     <%= f.label "作品名",for:"title" %><span class="emphasis">必須</span>

@@ -3,20 +3,7 @@
 </div>
 <div class="body">
   <%# ここから左辺の目次欄 %>
-  <div class="index">
-    <div class="index-title">
-      Works Index
-    </div>
-    <div class="index-contents">
-      <ul class="contents-lists">
-      <% @works.each do |work| %>
-        <li class="contents-list">
-          <span class="title-work"><%= work.title %></span><span class="date-work"><%= work.created_year %></span>
-        </li>
-      <% end %>
-      </ul>
-    </div>
-  </div>
+  <%= render "shared/works_index"%>
   <%# ここからメインコンテンツ表示域 %>
   <div class="works-contents">
     <div class="selected-works">
@@ -29,10 +16,11 @@
           <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"content-image") ,work_path(work.id)%>
         </div>
         <div class="content-title">
-          <span class="title-work"><%= work.title %></span><span class="date-work"><%= work.created_year %></span>
+          <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
         </div>
       </div>
       <% end %>
+      <%= paginate @works %>
 
      
 

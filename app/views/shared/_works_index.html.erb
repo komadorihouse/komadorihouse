@@ -1,0 +1,19 @@
+<div class="index">
+    <div class="index-title">
+      Works Index
+    </div>
+    <div class="index-contents">
+      <ul class="contents-lists">
+      <% @works.each do |work| %>
+        <li class="contents-list">
+          <span class="title-work">
+          <%= link_to work.title ,work_path(work.id) %>
+          </span>
+          <span class="date-work">
+          <%= link_to work.created_year ,work_path(work.id) %>
+          </span>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+</div>
