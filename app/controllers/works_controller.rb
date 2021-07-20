@@ -1,12 +1,12 @@
 class WorksController < ApplicationController
   def index
-    @work = Work.find(7)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
     ＠ip = request.remote_ip
   end
 
   def new
-    @work = Work.find(2)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @workbox = Work.new
   end
 
@@ -32,7 +32,7 @@ class WorksController < ApplicationController
     @info = "Works"
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @works = Work.page(params[:contents]).per(5).order('created_year DESC')
-    @work = Work.find(7)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     list = @workslist
     
     if request.xhr?
@@ -48,17 +48,17 @@ class WorksController < ApplicationController
   end
 
   def profile
-    @work = Work.find(1)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "Profile"
   end
 
   def contact
-    @work = Work.find(1)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "Contact"
   end
   
   def link
-    @work = Work.find(1)
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "Link"
   end
 
