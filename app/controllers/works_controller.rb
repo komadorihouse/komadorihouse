@@ -2,6 +2,7 @@ class WorksController < ApplicationController
   def index
     @work = Work.find(7)
     @info = "News"
+    ＠ip = request.remote_ip
   end
 
   def new
@@ -32,6 +33,11 @@ class WorksController < ApplicationController
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @works = Work.page(params[:contents]).per(5).order('created_year DESC')
     @work = Work.find(7)
+    list = @workslist
+    
+    if request.xhr?
+      render json:{ works: list }
+    end
   end
 
   def show
@@ -62,4 +68,5 @@ class WorksController < ApplicationController
     params.require(:work).permit(:title,:image,:description,:youtube,:created_year,:artist_id,:type_id)
   end
 
+  
 end

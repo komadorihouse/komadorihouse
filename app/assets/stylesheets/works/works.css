@@ -76,3 +76,11 @@
 .pagination{
   text-align: center;
 }
+
+#moreindex{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: lightslategray;
+  font-size: 13px;
+  cursor: pointer;
+}
