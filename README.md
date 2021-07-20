@@ -1,6 +1,6 @@
 # README
 
-work
+## Work
 
 | Column     | Type  | Options  |
 |------------|-------|----------|
@@ -11,3 +11,15 @@ work
 |created_year|integer|          |
 |artist_id   |integer|null:fales|
 |type_id     |integer|null:false|
+
+### Association
+- belongs_to_active_hash :type
+- belongs_to_active_hash :creater
+
+## Administrators
+
+| Column            | Type  | Options  |
+|-------------------|-------|----------|
+|email              |string |null:false|
+|encrypted_password |string |null:false|
+

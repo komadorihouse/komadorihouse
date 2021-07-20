@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :administrators
   root to: 'works#index'
   resources :works do
     collection do
