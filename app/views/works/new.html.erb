@@ -2,6 +2,9 @@
   <%= render "shared/frist-header"%>
 </div>
 <div class="form-body">
+<div class="form-menu">
+  <%= render "shared/form-menu" %>
+</div>
   作品登録
   <%= render partial: "art_form", locals:{ workbox: @workbox } %>
 </div>
