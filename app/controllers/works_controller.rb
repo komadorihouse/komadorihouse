@@ -2,7 +2,9 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    ＠ip = request.remote_ip
+    @ip = client_ip
+    @judge = judge_ip
+    binding.pry
   end
 
   def new
@@ -66,6 +68,18 @@ class WorksController < ApplicationController
 
   def work_params
     params.require(:work).permit(:title,:image,:description,:youtube,:created_year,:artist_id,:type_id)
+  end
+
+  def client_ip
+    request.ip
+  end
+
+  def judge_ip
+    if client_ip == "::1" || ""
+      p "OK"
+    else
+      p "NG"
+    end
   end
 
   
