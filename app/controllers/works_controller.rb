@@ -2,12 +2,10 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    @ip = client_ip
-    @judge = judge_ip
-    binding.pry
   end
 
   def new
+    judge_ip
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @workbox = Work.new
   end
@@ -75,10 +73,10 @@ class WorksController < ApplicationController
   end
 
   def judge_ip
-    if client_ip == "::1" || ""
-      p "OK"
+    if client_ip == "::1"
+    elsif client_ip == "110.135.160.94"
     else
-      p "NG"
+      redirect_to root_path
     end
   end
 
