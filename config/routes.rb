@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     collection do
       get 'link'
     end
+    collection do
+      get 'list'
+    end
   end
 end
