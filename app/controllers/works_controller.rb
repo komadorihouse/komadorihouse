@@ -23,7 +23,7 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @workbox = Work.find(params[:id])
+    @workbox = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
   end
 
   def update
@@ -75,7 +75,7 @@ class WorksController < ApplicationController
 
   def judge_ip
     if client_ip == "::1"
-    elsif client_ip == "110.135.160.94"
+    elsif client_ip == ENV['IP_ADDRESS']
     else
       redirect_to root_path
     end

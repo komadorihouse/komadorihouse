@@ -1,11 +1,8 @@
 <footer class="footer-box">
-  <%= image_tag 'komadorihouse_rogo_white.png', class:"footer-icon" %>
+  <%=link_to image_tag('komadorihouse_rogo_white.png', class:"footer-icon"),new_work_path %>
   <div class="footer-text">
     <div class="footer-komadori">
       Komadorihouse
-    </div>
-    <div class="session">
-      <%= link_to '管理者用' , new_administrator_session_path %>
     </div>
   </div>
 </footer>
