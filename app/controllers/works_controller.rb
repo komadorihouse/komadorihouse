@@ -23,16 +23,26 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @workbox = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
+    @work = Work.find(params[:id]).image
+    @workbox = Work.find(params[:id])
   end
 
   def update
+    @workbox = Work.find(params[:id])
+    @workbox.image.slice!("https://drive.google.com/file/d/")
+    @workbox.image.slice!("/view?usp=sharing")
+    binding.pry
+    if @workbox.update(work_params)
+      redirect_to work_path(@workbox.id)
+    else
+      render :edit
+    end
   end
 
   def works
     @info = "Works"
-    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
-    @works = Work.page(params[:contents]).per(5).order('created_year DESC')
+    @workslist = Work.all.order('created_year DESC')
+    @works = Work.page(params[:contents]).per(10).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     list = @workslist
     
@@ -43,9 +53,10 @@ class WorksController < ApplicationController
 
   def show
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
-    @work = Work.find(params[:id])
-    @creater = Creater.find(@work.artist_id).name
-    @info = @work.title
+    @item = Work.find(params[:id])
+    @work = Work.find(params[:id]).image
+    @creater = Creater.find(@item.artist_id).name
+    @info = @item.title
   end
 
   def profile
@@ -61,6 +72,11 @@ class WorksController < ApplicationController
   def link
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "Link"
+  end
+
+  def list
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
+    @workslist = Work.page(params[:list]).per(25).order('created_year DESC')
   end
 
   private

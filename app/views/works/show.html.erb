@@ -16,16 +16,16 @@
           <span class="small">creater -</span> <%= @creater %>
         </li>
         <li>
-          <span class="small">created yaer -</span> <%= @work.created_year %>
+          <span class="small">created yaer -</span> <%= @item.created_year %>
         </li>
         <li class="description">
-          <%= @work.description %>
+          <%= @item.description %>
         </li>
         <li>
-          <% if @work.type_id == 3 %>
-            <iframe width="900" height="506.25" src="https://www.youtube.com/embed/<%= @work.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% if @item.type_id == 3 %>
+            <iframe width="900" height="506.25" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <% else %>
-            <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@work.image}"),id:"work-image" %>
+            <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),id:"work-image" %>
           <% end %>
         </li>
       </ul>

@@ -1,2 +1,12 @@
-<%= link_to "新規登録" , new_work_path , class:"form-contents"%>
-<%= link_to "情報一覧、編集" , '#' , class:"form-contents"%>
+<div class="menu-btns">
+  <%= link_to(new_work_path) do%>
+    <div class="menu-btn">
+      新規登録
+    </div>
+  <% end %>
+  <%= link_to(list_works_path) do%>
+    <div class="menu-btn">
+      情報一覧/編集
+    </div>
+  <%end%>
+</div>
