@@ -2,6 +2,7 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
+    @ip = client_ip
   end
 
   def new
