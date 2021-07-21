@@ -1,0 +1,40 @@
+.work-lists{
+  margin-left: 100px;
+}
+
+.work{
+  display: flex;
+}
+
+.id{
+  width: 60px;
+  font-size: 10px;
+}
+
+.year{
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.text{
+  width: 500px;
+}
+
+.item{
+  margin-right: 30px;
+  display: flex;
+}
+
+
+
+.item-image{
+  width: 50px;
+  height: 50px;
+  object-fit: cover; 
+}
+
+.list-description-box{
+  align-items: flex-start;
+  font-size: 10px;
+  width: 300px;
+}
