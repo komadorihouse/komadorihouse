@@ -31,7 +31,6 @@ class WorksController < ApplicationController
     @workbox = Work.find(params[:id])
     @workbox.image.slice!("https://drive.google.com/file/d/")
     @workbox.image.slice!("/view?usp=sharing")
-    binding.pry
     if @workbox.update(work_params)
       redirect_to work_path(@workbox.id)
     else
