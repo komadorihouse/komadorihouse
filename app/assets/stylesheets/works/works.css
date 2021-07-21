@@ -84,3 +84,8 @@
   font-size: 13px;
   cursor: pointer;
 }
+
+.each-menu{
+  display: inline;
+  margin-left: 30px;
+}

@@ -1,0 +1,13 @@
+<div class="contents-body">
+      <% @works.each do |work| %>
+      <div class="content">
+        <div>
+          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"content-image") ,work_path(work.id)%>
+        </div>
+        <div class="content-title">
+          <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%= paginate @works, :param_name => 'contents' %>
