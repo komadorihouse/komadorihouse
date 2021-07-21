@@ -75,7 +75,7 @@ class WorksController < ApplicationController
 
   def judge_ip
     if client_ip == "::1"
-    elsif client_ip == ENV['IP_ADDRESS']
+    elsif client_ip == ENV["IP_ADDRESS"]
     else
       redirect_to root_path
     end
