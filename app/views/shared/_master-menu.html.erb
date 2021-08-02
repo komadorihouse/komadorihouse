@@ -1,0 +1,9 @@
+<ul id="artists-list">
+<% @creaters.each do |creater| %>
+  <% unless creater.id == 0 %>
+  <li id="artist-name">
+      <%= creater.name %>
+  </li>
+  <% end %>
+<% end %>
+</ul>

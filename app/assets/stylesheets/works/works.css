@@ -89,3 +89,25 @@
   display: inline;
   margin-left: 30px;
 }
+
+#artists-list{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  margin-left: 50px;
+  border:rgb(220, 220, 220) solid 1px;
+  border-radius: 10px;
+}
+
+#artist-name{
+  width: 230px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-bottom:rgb(220, 220, 220) solid 1px;
+}
+
+#artist-name:hover{
+  background-color: rgb(220, 220, 220);
+}

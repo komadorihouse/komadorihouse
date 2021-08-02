@@ -38,11 +38,11 @@ class WorksController < ApplicationController
   end
 
   def works
+    @creaters = Creater.all
     @info = "Works"
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-
     if request.xhr?
       if params.has_key?(:index)
         render "lists"

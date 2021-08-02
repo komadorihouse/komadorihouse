@@ -7,8 +7,9 @@
   <%# ここからメインコンテンツ表示域 %>
   <div class="works-contents">
     <div class="selected-works">
-      All Works
+      All Works <span class="artist-menu" id="artist-menu">アーティスト別</span><%= render 'shared/master-menu'%>
     </div>
+      
     <div class="contents-body" id="contents-body">
       <%= render 'shared/contents-body'%>
     </div>
