@@ -2,7 +2,6 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    @ip = client_ip
   end
 
   def new
@@ -40,14 +39,21 @@ class WorksController < ApplicationController
 
   def works
     @info = "Works"
-    @workslist = Work.all.order('created_year DESC')
-    @works = Work.page(params[:contents]).per(10).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @works = Work.page(params[:contents]).per(20).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    list = @workslist
-    
+
     if request.xhr?
-      render json:{ works: list }
+      if params.has_key?(:index)
+        render "lists"
+      elsif params.has_key?(:contents)
+        render "contents"
+      end
     end
+  end
+
+  def creater
+    
   end
 
   def show

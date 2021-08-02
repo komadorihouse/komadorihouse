@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'works#index'
   resources :works do
     collection do
-      get 'works'
+      get 'works' 
+    end
+    member do
+      get 'creater'
     end
     collection do
       get 'profile'

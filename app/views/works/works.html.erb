@@ -7,12 +7,14 @@
   <%# ここからメインコンテンツ表示域 %>
   <div class="works-contents">
     <div class="selected-works">
-      All Works<div class="each-menu"><%= render 'shared/each-menu' %></div>
+      All Works
     </div>
-    
-    
+    <div class="contents-body" id="contents-body">
       <%= render 'shared/contents-body'%>
-
+    </div>
+    <div id="next-contents">
+      <%= link_to_next_page @works,'もっと見る', :param_name => 'contents' , remote: true, id: 'more-contents'%>
+    </div>
    </div>
 </div>
 <div class="footer-area">

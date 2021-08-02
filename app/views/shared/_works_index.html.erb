@@ -3,22 +3,13 @@
       Works Index
     </div>
     <div class="index-contents">
-      <ul class="contents-lists">
-      <% @workslist.each do |work| %>
-        <li class="contents-list">
-          <span class="title-work">
-          <%= link_to work.title ,work_path(work.id) %>
-          </span>
-          <span class="date-work">
-          <%= link_to work.created_year ,work_path(work.id) %>
-          </span>
-        </li>
-      <% end %>
+      <ul id="contents-lists">
+       <%= render 'shared/index' ,:param_name => "index"%>
       </ul>
       <div id="more-lists">
       </div>
     </div>
-    <div id="moreindex">
-    
-    </div>
+     <span id="next">
+        <%= link_to_next_page @workslist, 'もっと見る',id:"more-index" ,:param_name => "index" ,remote: true %>
+     </span>
 </div>

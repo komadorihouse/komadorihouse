@@ -1,0 +1,5 @@
+$('#more-index').remove();
+$('#contents-lists').append("<%= escape_javascript(render 'shared/index') %>")
+$("#next").append("<%= escape_javascript(
+  link_to_next_page(@workslist, 'さらに見る', remote: true, id: 'more-index',:param_name => "index" )
+) %>");
