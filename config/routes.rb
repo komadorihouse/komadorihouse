@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get 'creater'
     end
+    member do
+      get 'types'
+    end
     collection do
       get 'profile'
     end

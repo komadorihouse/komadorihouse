@@ -38,32 +38,47 @@ class WorksController < ApplicationController
   end
 
   def works
+    @type = Type.all
     @creaters = Creater.all
     @info = "Works"
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
+    @body_info = "All Works"
     if request.xhr?
       if params.has_key?(:index)
         render "lists"
       elsif params.has_key?(:contents)
         render "contents"
+      else
+        render "creater"
       end
     end
   end
 
   def creater
+    @type = Type.all
     @creaters = Creater.all
     @info = Creater.find(params[:id]).name
     @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
-    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    # binding.pry
-    @html = "<div class='contents-body' id='contents-body'><%= render 'shared/contents-body' %></div>"
+    @body_info = "#{@info} Works"
     if params.has_key?(:contents)
       render 'contents'
     else
       render 'creater'
     end
+  end
+
+  def types
+    if params[:id].to_i == 0
+      @info = "All Works"
+      @works = Work.page(params[:contents]).per(20).order('created_year DESC')
+    else
+      @info = Type.find(params[:id]).name
+      @works = Work.where(type_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+    end
+    @body_info = "#{@info}"
+    render 'creater'
   end
 
   def show

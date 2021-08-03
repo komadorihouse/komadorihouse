@@ -7,7 +7,17 @@
   <%# ここからメインコンテンツ表示域 %>
   <div class="works-contents">
     <div class="selected-works" id="selected-works">
-      All Works <span class="artist-menu" id="artist-menu">アーティスト別</span><%= render 'shared/master-menu'%>
+      <span id="body-info">
+        <%= @body_info %>
+      </span>
+      <span class="artist-menu" id="artist-menu">
+        アーティスト別
+      </span>
+      <span class="artist-menu" id="type-menu">
+        カテゴリー別
+      </span>
+      <%= render 'shared/master-menu'%>
+      <%= render 'shared/type-menu'%>
     </div>
       
     <div class="contents-body" id="contents-body">
