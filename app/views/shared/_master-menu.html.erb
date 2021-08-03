@@ -2,7 +2,7 @@
 <% @creaters.each do |creater| %>
   <% unless creater.id == 0 %>
   <li id="artist-name">
-      <%= creater.name %>
+      <%= link_to creater.name , creater_work_path(creater.id) , remote: true%>
   </li>
   <% end %>
 <% end %>

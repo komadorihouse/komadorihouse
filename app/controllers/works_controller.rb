@@ -53,7 +53,13 @@ class WorksController < ApplicationController
   end
 
   def creater
-    
+    @creaters = Creater.all
+    @info = Creater.find(params[:id]).name
+    @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
+    # binding.pry
+    @html = "<div class='contents-body' id='contents-body'><%= render 'shared/contents-body' %></div>"
+    render 'creater.js.erb'
   end
 
   def show

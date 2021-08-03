@@ -6,12 +6,12 @@
   <%= render "shared/works_index"%>
   <%# ここからメインコンテンツ表示域 %>
   <div class="works-contents">
-    <div class="selected-works">
+    <div class="selected-works" id="selected-works">
       All Works <span class="artist-menu" id="artist-menu">アーティスト別</span><%= render 'shared/master-menu'%>
     </div>
       
     <div class="contents-body" id="contents-body">
-      <%= render 'shared/contents-body'%>
+        <%= render 'shared/contents-body' %>
     </div>
     <div id="next-contents">
       <%= link_to_next_page @works,'もっと見る', :param_name => 'contents' , remote: true, id: 'more-contents'%>

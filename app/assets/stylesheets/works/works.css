@@ -59,8 +59,6 @@
   overflow-wrap: break-all;
 }
 
-
-
 .content-image{
   width: 200px;
   height: 200px;
@@ -94,7 +92,8 @@
   margin-left: 30px;
   cursor: pointer;
   font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 450;
+  font-weight: 300;
+  font-size: 14px;
   transition: 0.3s;
 }
 
