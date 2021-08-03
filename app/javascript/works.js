@@ -1,6 +1,12 @@
 $(function(){
+  var list = $('#artists-list');
   $('#artist-menu').on('click',function(){
-    var list = $('#artists-list');
-    list.slideToggle();
+    list.slideToggle(100);
+  });
+  
+  $(document).on('click',function(event) {
+    if(!$(event.target).closest('#artist-menu').length) {
+      list.slideUp(100);
+    }
   });
 });

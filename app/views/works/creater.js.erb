@@ -1,3 +1,8 @@
 $('.content').remove();
 $('#contents-body').append("<%= escape_javascript(render 'shared/contents-body') %>");
-$('#artists-list').slideToggle();
+$('#artists-list').slideUp(100);
+
+$('#more-contents').remove();
+$("#next-contents").append("<%= escape_javascript(
+  link_to_next_page(@works, 'さらに見る', remote: true, id: 'more-contents',:param_name => "contents" )
+) %>");

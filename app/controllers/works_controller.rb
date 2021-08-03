@@ -59,7 +59,11 @@ class WorksController < ApplicationController
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     # binding.pry
     @html = "<div class='contents-body' id='contents-body'><%= render 'shared/contents-body' %></div>"
-    render 'creater.js.erb'
+    if params.has_key?(:contents)
+      render 'contents'
+    else
+      render 'creater'
+    end
   end
 
   def show
