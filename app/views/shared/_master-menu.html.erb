@@ -1,0 +1,16 @@
+<ul id="artists-list" style="display: none;">
+  <%= link_to(works_works_path , remote: true) do %>
+    <li id="artist-name" class="artist-name">
+      全てのアーティスト
+    </li>
+  <% end %>
+<% @creaters.each do |creater| %>
+  <% unless creater.id == 0 %>
+    <%= link_to(creater_work_path(creater.id), remote: true) do %>
+      <li id="artist-name" class="artist-name <%= "a#{creater.id}" %>">
+        <%= creater.name  %>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+</ul>

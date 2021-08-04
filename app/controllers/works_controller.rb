@@ -2,7 +2,6 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    @ip = client_ip
   end
 
   def new
@@ -39,15 +38,50 @@ class WorksController < ApplicationController
   end
 
   def works
+    @type = Type.all
+    @creaters = Creater.all
     @info = "Works"
-    @workslist = Work.all.order('created_year DESC')
-    @works = Work.page(params[:contents]).per(10).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @works = Work.page(params[:contents]).per(20).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    list = @workslist
-    
+    @body_info = "All Works"
     if request.xhr?
-      render json:{ works: list }
+      if params.has_key?(:index)
+        render "lists"
+      elsif params.has_key?(:contents)
+        render "contents"
+      else
+        render "creater"
+      end
     end
+  end
+
+  def creater
+    @type = Type.all
+    @creaters = Creater.all
+    @info = Creater.find(params[:id]).name
+    @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+    @body_info = "#{@info} Works"
+    if params.has_key?(:contents)
+      render 'contents'
+    else
+      render 'creater'
+    end
+  end
+
+  def types
+    if params[:id].to_i == 0
+      @info = "All Works"
+      @works = Work.page(params[:contents]).per(20).order('created_year DESC')
+    else
+      @info = Type.find(params[:id]).name
+      @works = Work.where(type_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+    end
+    @body_info = "#{@info}"
+    render 'creater'
+  end
+
+  def creater_type
   end
 
   def show

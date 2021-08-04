@@ -1,0 +1,13 @@
+作者別
+カテゴリー別
+制作年別
+
+<ul>
+<% @creaters.each do |creater| %>
+  <% if creater.id != 0 %>
+    <li>
+      <%= link_to reater.name,  creater_work_path(creater.id)%>
+    </li>
+  <% end %>
+<% end %>
+</ul>

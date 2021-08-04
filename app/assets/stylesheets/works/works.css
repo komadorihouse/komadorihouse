@@ -59,8 +59,6 @@
   overflow-wrap: break-all;
 }
 
-
-
 .content-image{
   width: 200px;
   height: 200px;
@@ -83,4 +81,60 @@
   color: lightslategray;
   font-size: 13px;
   cursor: pointer;
+}
+
+.each-menu{
+  display: inline;
+  margin-left: 30px;
+}
+
+.artist-menu{
+  margin-left: 30px;
+  cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.artist-menu:hover{
+  color: darkorange;
+}
+
+#artists-list{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  margin-left: 80px;
+  border:rgb(220, 220, 220) solid 1px;
+  border-radius: 10px;
+}
+
+#artist-name{
+  width: 230px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-bottom:rgb(220, 220, 220) solid 1px;
+}
+
+#artist-name:hover{
+  background-color: rgb(220, 220, 220);
+}
+
+#type-list{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  margin-left: 230px;
+  border:rgb(220, 220, 220) solid 1px;
+  border-radius: 10px;
+}
+
+#creater-type-list{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  margin-left: 371px;
+  border:rgb(220, 220, 220) solid 1px;
+  border-radius: 10px;
 }

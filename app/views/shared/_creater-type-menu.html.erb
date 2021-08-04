@@ -1,0 +1,16 @@
+<ul id="creater-type-list" style="display: none;">
+  <%= link_to(types_work_path(id: 0) , remote: true) do %>
+    <li id="artist-name">
+      全ての作品
+    </li>
+  <% end %>
+<% @type.each do |type| %>
+  <% unless type.id == 0 %>
+    <%= link_to(types_work_path(type.id), remote: true) do %>
+      <li id="artist-name">
+        <%= type.name  %>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+</ul>
