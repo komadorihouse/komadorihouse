@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     member do
       get 'types'
     end
+    member do
+      get 'creater_type'
+    end
     collection do
       get 'profile'
     end

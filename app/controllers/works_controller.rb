@@ -81,6 +81,9 @@ class WorksController < ApplicationController
     render 'creater'
   end
 
+  def creater_type
+  end
+
   def show
     @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
     @item = Work.find(params[:id])
