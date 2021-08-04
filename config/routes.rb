@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :administrators
   root to: 'works#index'
+  resources :contacts, only: [:new, :create]
   resources :works do
     collection do
       get 'works' 

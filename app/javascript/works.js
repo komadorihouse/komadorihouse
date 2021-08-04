@@ -23,7 +23,13 @@ $(function(){
     }
   });
 
+  var contactBtn = $('#contact-btn');
+  contactBtn.on('click',function(){
+    $('#contact-form').slideDown(200);
+  });
 
-  
+  $('#close-btn').on('click',function(){
+    $('#contact-form').slideUp(200);
+  });
 
 });
