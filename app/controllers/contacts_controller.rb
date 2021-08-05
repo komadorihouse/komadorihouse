@@ -6,7 +6,13 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    @contact_success = Contact.new(contact_params)
+    if @contact_success.save
+      @contact = Contact.new
+    else
+      @contact_success
+      render 'contact-error'
+    end
   end
 
   private
