@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
   def create
     @contact_success = Contact.new(contact_params)
     if @contact_success.save
+      ContactMailer.contact_mail(@contact_success).deliver_later
       @contact = Contact.new
     else
       @contact_success

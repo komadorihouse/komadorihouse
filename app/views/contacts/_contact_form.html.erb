@@ -20,7 +20,7 @@
       <%= f.text_field :email, class:"works-text", id:"contact-email" ,placeholder:"komadorihouse@email.com" %>
       <%= f.label "お問い合わせ内容",for:"text" %><span class="emphasis">必須</span>
       <%= f.text_area :text, class:"works-text", id:"contact-text" ,placeholder:"制作依頼など" %>
-      <%= f.text_area :ip_address, class:"works-text", id:"text",value:@ip ,style:"display: none;"%>
+      <%= f.text_area :ip_address, class:"ip-text", id:"text",value:@ip ,style:"display: none;"%>
       <div id="submit-box">
         <%= f.submit "送信" ,class:"works-submit" ,id:"contact-submit" %>
       </div>
