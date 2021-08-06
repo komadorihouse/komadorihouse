@@ -27,5 +27,8 @@ Rails.application.routes.draw do
     collection do
       get 'list'
     end
+    collection do
+      get 'show_mail'
+    end
   end
 end

@@ -110,8 +110,14 @@ class WorksController < ApplicationController
   end
 
   def list
+    judge_ip
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @workslist = Work.page(params[:list]).per(25).order('created_year DESC')
+  end
+
+  def show_mail
+    judge_ip
+    @mails = Contact.page(params[:mail]).per(25).order('created_at DESC')
   end
 
   private

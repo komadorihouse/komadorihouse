@@ -6,26 +6,29 @@
   <%= render "shared/form-menu" %>
 </div>
   
-    <% @workslist.each do |work| %>
+    <% @mails.each do |mail| %>
       <div class="work">
         <div class="item id">
-          <%= link_to Creater.find(work.artist_id).name ,edit_work_path(work.id) %>
+          <%= mail.name %>
         </div>
         <div class="item text">
-          <%= link_to work.title ,edit_work_path(work.id) %><%= link_to work.created_year ,work_path(work.id),class:"year" %>
+          <%= mail.email %>
         </div>
         <div class="item image">
-          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"item-image") ,work_path(work.id) %>
+          <%= mail.ip_address %>
+        </div>
+        <div class="item image">
+          <%= mail.text %>
         </div>
         <div class="item">
           <div class="list-description-box">
-            <%= link_to work.description ,work_path(work.id) %>
+            <%= mail.created_at %>
           </div>
         </div>
       </div>
     <% end %>
   <div class="paginate-list">
-    <%= paginate @workslist, :param_name => 'list' %>
+    <%= paginate @mails, :param_name => 'mail' %>
   </div>
 </div>
 <div class="footer-area">
