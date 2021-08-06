@@ -1,0 +1,29 @@
+<div id="contact-form" style="display: none;">
+  <div id="close-btn">
+    <div id="batsu1"></div>
+    <div id="batsu2"></div>
+  </div>
+  <%= form_with(model: @contact,url:contacts_path , data: { remote: true}) do |f| %>
+    <div id="form-headr">
+      <div id="contact-rogo">
+        <%= image_tag('komadorihouse_rogo_black.png',id:"rogo-image") %>
+      </div>
+      Contact
+    </div>  
+    <div id="error-box">
+      <%= render 'layouts/error_messages', model: f.object %>
+    </div>
+    <div class="works-form">
+      <%= f.label "お名前",for:"name" %><span class="emphasis">必須</span>
+      <%= f.text_field :name, class:"works-text", id:"contact-name" ,placeholder:"山田 太郎" %>
+      <%= f.label "Eメールアドレス",for:"email" %><span class="emphasis">必須</span>
+      <%= f.text_field :email, class:"works-text", id:"contact-email" ,placeholder:"komadorihouse@email.com" %>
+      <%= f.label "お問い合わせ内容",for:"text" %><span class="emphasis">必須</span>
+      <%= f.text_area :text, class:"works-text", id:"contact-text" ,placeholder:"制作依頼など" %>
+      <%= f.text_area :ip_address, class:"ip-text", id:"text",value:@ip ,style:"display: none;"%>
+      <div id="submit-box">
+        <%= f.submit "送信" ,class:"works-submit" ,id:"contact-submit" %>
+      </div>
+    </div>
+  <% end %>
+</div>

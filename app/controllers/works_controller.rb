@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :contact_form
+
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
@@ -130,5 +132,9 @@ class WorksController < ApplicationController
     end
   end
 
+  def contact_form
+    @contact = Contact.new
+    @ip = request.ip
+  end
   
 end

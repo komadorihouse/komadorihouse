@@ -135,6 +135,118 @@
   position: absolute;
   background-color: rgb(255, 255, 255);
   margin-left: 371px;
+  border:rgb(72, 57, 57) solid 1px;
+  border-radius: 10px;
+}
+
+/* 以下contactform */
+
+#contact-form{
+  padding: 70px 100px 70px 100px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  margin-left: calc(100% - 70vw);
+  margin-top: 70px;
   border:rgb(220, 220, 220) solid 1px;
   border-radius: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+
+#form-headr{
+  margin-bottom: 50px;
+}
+
+#close-btn{
+  position: absolute;
+  margin-left: -90px;
+  margin-top: -60px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+#batsu1{
+  position: absolute;
+  margin-top: 22.7px;
+  margin-left: 5px;
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: rgb(70, 70, 70);
+  transform:rotate(45deg);
+}
+
+#batsu2{
+  position: absolute;
+  margin-top: 22.7px;
+  margin-left: 5px;
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: rgb(70, 70, 70);
+  transform:rotate(-45deg);
+}
+
+#close-btn:hover{
+  background-color: rgb(216, 216, 216);
+  opacity: 1;
+}
+
+#form-headr{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#contactbox{
+  position: absolute;
+  width: 100vw;
+}
+
+#contact-name{
+  width: 500px;
+  height: 30px;
+}
+
+#contact-email{
+  width: 500px;
+  height: 30px;
+}
+
+#contact-text{
+  width: 500px;
+  height: 100px;
+  resize: vertical;
+  margin-bottom: 50px;
+}
+
+.submit-box{
+  width: 500px;
+  height: 40px;
+}
+
+#contact-submit{
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact-submit:hover{
+  background-color: rgb(4, 235, 212);
+}
+
+#error-box{
+  text-align: center;
+  color: rgba(198, 0, 0, 0.763);
 }

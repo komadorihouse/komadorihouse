@@ -23,7 +23,15 @@ $(function(){
     }
   });
 
+  var contactBtn = $('#contact-btn');
+  contactBtn.on('click',function(){
+    $('#contact-form').slideToggle(200);
+    $('#error').remove();
+  });
 
-  
+  $('#close-btn').on('click',function(){
+    $('#contact-form').slideUp(200);
+    $('#error').remove();
+  });
 
 });
