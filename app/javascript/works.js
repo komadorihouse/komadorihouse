@@ -1,7 +1,7 @@
 $(function(){
   var list = $('#artists-list');
   var typeList = $('#type-list');
-  var createrType = $('#creater-type-list');
+  
 
   $('#artist-menu').on('click',function(){
     list.slideToggle(100);
@@ -29,9 +29,10 @@ $(function(){
     $('#error').remove();
   });
 
-  $('#close-btn').on('click',function(){
+  $('#close-btn').on('click', function(){
     $('#contact-form').slideUp(200);
     $('#error').remove();
   });
 
+  
 });

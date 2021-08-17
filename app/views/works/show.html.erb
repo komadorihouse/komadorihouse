@@ -19,7 +19,7 @@
           <span class="small">created yaer -</span> <%= @item.created_year %>
         </li>
         <li class="description">
-          <%= @item.description %>
+          <%= simple_format(@item.description) %>
         </li>
         <li>
           <% if @item.type_id == 3 %>

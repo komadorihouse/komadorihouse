@@ -1,6 +1,7 @@
 .body{
   padding:0px 0px 0px 100px;
   display: flex;
+  margin-top: 50px;
 }
 
 .index{
@@ -140,13 +141,16 @@
 }
 
 /* 以下contactform */
+#contactbox{
+  position: fixed;
+  width: 100vw;
+}
 
 #contact-form{
   padding: 70px 100px 70px 100px;
-  position: fixed;
+  width: 550px;
   background-color: rgb(255, 255, 255);
-  margin-left: calc(100% - 70vw);
-  margin-top: 70px;
+  margin: auto;
   border:rgb(220, 220, 220) solid 1px;
   border-radius: 10px;
   font-family: 'Noto Sans JP', sans-serif;
@@ -202,10 +206,7 @@
   font-weight: 600;
 }
 
-#contactbox{
-  position: fixed;
-  width: 100vw;
-}
+
 
 #contact-name{
   width: 500px;
@@ -276,4 +277,117 @@
   display: flex;
   justify-content: center;
   width: 100vw;
+}
+
+/* 以下プロフィール */
+
+.profile{
+  width: 100vw;
+  height: auto;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+#about{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  color: rgb(60, 60, 60);
+  font-weight: 200;
+}
+
+.text-title{
+  line-height: 6px;
+}
+
+.brand{
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.main-text{
+  line-height: 50px;
+  letter-spacing: 5px;
+}
+
+#about-artists{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  color: rgb(60, 60, 60);
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+
+#artists-title-box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.artists-title{
+  font-size: 30px;
+  color: rgb(99, 99, 99);
+}
+
+#artists-border{
+  width: calc(800px - 115.25px - 30px);
+  margin-left: 30px;
+  height: 1px;
+  background-color: rgb(150, 150, 150);
+}
+
+.artist-profile{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.artist-head{
+  display: flex;
+}
+
+.artist-image{
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+  background-color: rgb(188, 188, 188);
+}
+
+.atsuko-image{
+  opacity:0.7;
+}
+
+.profile-name{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.artist-status{
+  line-height: 30px;
+}
+
+.profile-right{
+  margin-left: 50px;
+}
+
+.profile-left{
+  margin-right: 50px;
+}
+
+.artist-overview{
+  margin-top: 50px;
+  line-height: 30px;
+}
+
+.profile-border{
+  width: 100%;
+  height: 1px;
+  background-color: rgb(150, 150, 150);
+}
+
+.image-right{
+  margin-left: auto;
 }

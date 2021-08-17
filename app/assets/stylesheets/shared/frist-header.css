@@ -20,7 +20,7 @@
 }
 
 #rogo-image {
-  width: 100px;
+  width: 140px;
 }
 
 #menu {
@@ -58,4 +58,16 @@
   display: flex;
   padding-left: 4px;
   padding-top: 20px;
+}
+
+.info-text{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 19px;
+  overflow-wrap: break-word;
 }

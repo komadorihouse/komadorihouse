@@ -8,7 +8,7 @@
 
   <div class="title-info">
     <%= link_to image_tag('komadorihouse_kana.png',id:"rogo-kana" ),'/' %>
-    <%= link_to image_tag('komadorihouse_rogo_black.png',id:"rogo-image") ,'/' %>
+    <%= link_to image_tag('old_rogo_black_close.png',id:"rogo-image") ,'/' %>
     <div class="info">
       <div class="info-text">
           <%= @info %>
@@ -21,7 +21,12 @@
       <li class="menu-font"><%= link_to "Profile",profile_works_path %></li>
       <li class="menu-font" id="contact-btn">Contact</li>
       <li class="menu-font"><%= link_to "Link" ,link_works_path %></li>
+      <li class="menu-font"><%= link_to "Kids' room" ,"#" %></li>
     </ul>
   </div>
-    <%= image_tag("http://drive.google.com/uc?export=view&id=#{@work}",class:"image-area") %>
+    <% if current_page?(action: 'index') %>
+      <%= image_tag("madawakaranai_kame.gif",class:"image-area") %>
+    <% else %>
+      <%= image_tag("http://drive.google.com/uc?export=view&id=#{@work}",class:"image-area") %>
+    <% end %>
 </header>

@@ -39,6 +39,12 @@ class WorksController < ApplicationController
     end
   end
 
+  def destroy
+    @work = Work.find(params[:id])
+    @work.destroy
+    redirect_to action: :list
+  end
+
   def works
     @type = Type.all
     @creaters = Creater.all
@@ -92,6 +98,11 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id]).image
     @creater = Creater.find(@item.artist_id).name
     @info = @item.title
+    if request.xhr?
+      if params.has_key?(:index)
+        render "lists"
+      end
+    end
   end
 
   def profile
