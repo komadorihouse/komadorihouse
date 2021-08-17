@@ -1,9 +1,25 @@
 <div class="header">
   <%= render "shared/frist-header"%>
-<div class="body">
-  
 </div>
-
+<div class="news-body">
+  <div id="news-index-box">
+    <%# ここから左辺の目次欄 %>
+    <%= render "shared/news_index"%>
+  </div>
+  <%# ここからメインコンテンツ表示域 %>
+  <div id="news-contents">
+    <div class="blog-head">
+      <div class="blog-date">
+        2021.8.16
+      </div>
+      <div class="blog-share">
+        Shere
+        <%= image_tag('facebook.png', class:"sns-rogo") %>
+        <%= image_tag('twitter.png', class:"sns-rogo") %>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="footer-area">
   <%= render "shared/footer"%>
 </div>
