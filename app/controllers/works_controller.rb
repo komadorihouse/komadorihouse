@@ -4,9 +4,16 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    @blogslist = Blog.page(params[:index]).per(10).order('created_at DESC')
-    @blogs = Blog.page(params[:contents]).per(20).order('created_at DESC')
+    @blogslist = Blog.page(params[:index]).per(20).order('created_at DESC')
+    @blogs = Blog.page(params[:contents]).per(10).order('created_at DESC')
     @switch = judge_ip_switch
+    if request.xhr?
+      if params.has_key?(:index)
+        render "blog_lists"
+      elsif params.has_key?(:contents)
+        render "blog_contents"
+      end
+    end
   end
 
   def new

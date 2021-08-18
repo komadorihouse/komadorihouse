@@ -1,0 +1,5 @@
+$('#more-index').remove();
+$('#more-lists').append("<%= escape_javascript(render 'shared/news_index') %>")
+$("#next").append("<%= escape_javascript(
+  link_to_next_page(@blogslist, 'さらに見る', remote: true, id: 'more-index',:param_name => "index" )
+) %>");

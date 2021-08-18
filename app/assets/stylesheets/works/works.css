@@ -518,3 +518,13 @@
   font-size: 18px;
   font-weight: 300;
 }
+
+.more-blog{
+  margin-top: 50px;
+  margin-left: 49px;
+  transition: 0.3s;
+}
+
+.more-blog:hover{
+  color: darkorange;
+}

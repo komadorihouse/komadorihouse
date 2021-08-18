@@ -1,0 +1,6 @@
+$('#news-contents').append("<%= escape_javascript(render partial: "blog_contents") %>");
+
+$('#more-contents').remove();
+$("#next-contents").append("<%= escape_javascript(
+  link_to_next_page(@blogs, '過去の記事をさらに表示', remote: true, id: 'more-contents',:param_name => "contents" )
+) %>");
