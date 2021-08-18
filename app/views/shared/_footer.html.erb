@@ -1,8 +1,13 @@
 <footer class="footer-box">
-  <%=link_to image_tag('komadorihouse_rogo_white.png', class:"footer-icon"),new_work_path %>
-  <div class="footer-text">
-    <div class="footer-komadori">
-      Komadorihouse
+    <div class="footer-text">
+      <ul class="footer-menus">
+        <li class="footer-menu"><%= link_to "News",root_path %></li>
+        <li class="footer-menu"><%= link_to "Works",works_works_path %></li>
+        <li class="footer-menu"><%= link_to "Profile",profile_works_path %></li>
+        <li class="footer-menu" id="contact-btn2">Contact</li>
+        <li class="footer-menu"><%= link_to "Link" ,link_works_path %></li>
+        <li class="footer-menu"><%= link_to "Kids' room" ,"#" %></li>
+        <%=link_to image_tag('footericon_close.png', class:"footer-icon"),new_work_path %>
+      </ul>
     </div>
-  </div>
 </footer>
