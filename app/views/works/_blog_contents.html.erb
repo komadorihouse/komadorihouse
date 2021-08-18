@@ -7,6 +7,12 @@
       Shere.
       <%= link_to image_tag('facebook.png', class:"sns-rogo"),"http://www.facebook.com/share.php?u=#{request.url}",target: '_blank' %>
       <%= link_to image_tag('twitter.png', class:"sns-rogo"),"https://twitter.com/share?url=#{request.url}&text=#{blog.title}&hashtags=コマドリハウス",target: '_blank' %>
+      <% if @switch %>
+        <div class="edit-menu">
+          <%= link_to 'Edit' ,edit_blog_path("#{blog.id}"),class:"edit-btn" %>
+          <%= link_to 'Delete' ,blog_path("#{blog.id}") ,method: :delete, class:"delete-btn" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="blog-title">

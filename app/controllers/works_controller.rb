@@ -6,6 +6,7 @@ class WorksController < ApplicationController
     @info = "News"
     @blogslist = Blog.page(params[:index]).per(10).order('created_at DESC')
     @blogs = Blog.page(params[:contents]).per(20).order('created_at DESC')
+    @switch = judge_ip_switch
   end
 
   def new
@@ -148,6 +149,16 @@ class WorksController < ApplicationController
     elsif client_ip == ENV["IP_ADDRESS"]
     else
       redirect_to root_path
+    end
+  end
+
+  def judge_ip_switch
+    if client_ip == "::1"
+      true
+    elsif client_ip == ENV["IP_ADDRESS"]
+      true
+    else
+      false
     end
   end
 

@@ -466,6 +466,38 @@
   opacity: 1;
 }
 
+.edit-menu{
+  margin-top: 20px;
+  display: flex;
+}
+
+.edit-btn{
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 30px;
+}
+
+.edit-btn:hover{
+  font-weight: 500;
+  color: darkorange;
+}
+
+.delete-btn{
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover{
+  font-weight: 500;
+  color: darkorange;
+}
+
+.blog-menu{
+  position: absolute;
+  margin-left: 99px;
+}
+
+
 .blog-title{
   margin-top: 30px;
   margin-bottom: 40px;
