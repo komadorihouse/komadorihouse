@@ -431,27 +431,27 @@
 
 #news-contents{
   width: 700px;
-  height: 20px;
+  height: auto;
   margin-left: 7%;
   margin-right: auto;
   margin-top: 50px;
-  color: rgb(60, 60, 60);
   font-weight: 200;
 }
 
 .blog-head{
+  margin-top: 40px;
   display: flex;
 }
 
 .blog-date{
-  width: 150px;
+  width: 200px;
   letter-spacing: 3px;
   font-weight: 300;
 }
 
 .blog-share{
-  width: 120px;
-  margin-left: calc(700px - 270px);
+  width: 130px;
+  margin-left: calc(700px - 320px);
 }
 
 .sns-rogo{
@@ -464,4 +464,25 @@
 
 .sns-rogo:hover{
   opacity: 1;
+}
+
+.blog-title{
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.blog-image{
+  width: 700px;
+  height: auto;
+  background-color: lightgrey;
+}
+
+.blog-text{
+  letter-spacing: 2px;
+  line-height: 40px;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 300;
 }

@@ -1,0 +1,35 @@
+<% @blogs.each do |blog| %>
+  <div class="blog-head">
+    <div class="blog-date">
+      <%= blog.created_at.to_s(:date_jp) %>
+    </div>
+    <div class="blog-share">
+      Shere.
+      <%= link_to image_tag('facebook.png', class:"sns-rogo"),"http://www.facebook.com/share.php?u=#{request.url}",target: '_blank' %>
+      <%= link_to image_tag('twitter.png', class:"sns-rogo"),"https://twitter.com/share?url=#{request.url}&text=#{blog.title}&hashtags=コマドリハウス",target: '_blank' %>
+    </div>
+  </div>
+  <div class="blog-title">
+    <%= blog.title %>
+  </div>
+  <% unless blog.image_1 == "" %>
+    <%= image_tag("http://drive.google.com/uc?export=view&id=#{blog.image_1}", class:"blog-image") %>
+  <% end %>
+  <div class="blog-text">
+    <%= blog.text_1 %>
+  </div>
+  <% unless blog.image_2 == "" %>
+    <%= image_tag("http://drive.google.com/uc?export=view&id=#{blog.image_2}", class:"blog-image" ) %>
+  <% end %>
+  <div class="blog-text">
+    <%= blog.text_2 %>
+  </div>
+  <% unless blog.image_3 == "" %>
+    <%= image_tag("http://drive.google.com/uc?export=view&id=#{blog.image_3}", class:"blog-image") %>
+  <% end %>
+  <div class="blog-text">
+  </div>
+    <%= blog.text_3 %>
+  <div class="profile-border">
+  </div>
+<% end %>

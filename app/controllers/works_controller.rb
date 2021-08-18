@@ -4,6 +4,8 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
+    @blogslist = Blog.page(params[:index]).per(10).order('created_at DESC')
+    @blogs = Blog.page(params[:contents]).per(20).order('created_at DESC')
   end
 
   def new

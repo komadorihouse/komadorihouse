@@ -1,4 +1,5 @@
 //= require_tree .
+//= require social-share-button 
 //= require jquery
 //= require jquery_ujs
 // This file is automatically compiled by Webpack, along with any other files

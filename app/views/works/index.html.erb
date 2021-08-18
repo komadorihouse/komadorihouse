@@ -6,18 +6,9 @@
     <%# ここから左辺の目次欄 %>
     <%= render "shared/news_index"%>
   </div>
-  <%# ここからメインコンテンツ表示域 %>
+  <%# ここからNews記事表示域 %>
   <div id="news-contents">
-    <div class="blog-head">
-      <div class="blog-date">
-        2021.8.16
-      </div>
-      <div class="blog-share">
-        Shere
-        <%= image_tag('facebook.png', class:"sns-rogo") %>
-        <%= image_tag('twitter.png', class:"sns-rogo") %>
-      </div>
-    </div>
+    <%= render partial: "blog_contents" %>
   </div>
 </div>
 <div class="footer-area">
