@@ -29,6 +29,12 @@ $(function(){
     $('#error').remove();
   });
 
+  var contactBtnF = $('#contact-btn2');
+  contactBtnF.on('click',function(){
+    $('#contact-form').slideToggle(200);
+    $('#error').remove();
+  });
+
   $('#close-btn').on('click', function(){
     $('#contact-form').slideUp(200);
     $('#error').remove();
