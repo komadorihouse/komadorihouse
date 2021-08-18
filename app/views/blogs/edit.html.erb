@@ -1,0 +1,10 @@
+<div class="header">
+  <%= render "shared/frist-header"%>
+</div>
+<div class="form-body">
+<div class="form-menu">
+  <%= render "shared/form-menu" %>
+</div>
+  ブログ記事の編集
+  <%= render partial: 'blog-form', locals: { blog: @blog } %>
+</div>

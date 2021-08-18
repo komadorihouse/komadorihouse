@@ -1,9 +1,16 @@
 <div class="header">
   <%= render "shared/frist-header"%>
-<div class="body">
-  
 </div>
-
+<div class="news-body">
+  <div id="news-index-box">
+    <%# ここから左辺の目次欄 %>
+    <%= render "shared/news_index"%>
+  </div>
+  <%# ここからNews記事表示域 %>
+  <div id="news-contents">
+    <%= render partial: "blog_contents" %>
+  </div>
+</div>
 <div class="footer-area">
   <%= render "shared/footer"%>
 </div>

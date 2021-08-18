@@ -1,12 +1,17 @@
 <div class="menu-btns">
   <%= link_to(new_work_path) do%>
     <div class="menu-btn">
-      新規登録
+      作品新規登録
     </div>
   <% end %>
   <%= link_to(list_works_path) do%>
     <div class="menu-btn">
-      情報一覧/編集
+      作品情報一覧/編集
+    </div>
+  <%end%>
+  <%= link_to(new_blog_path) do%>
+    <div class="menu-btn">
+      ブログの投稿
     </div>
   <%end%>
   <%= link_to(show_mail_works_path) do%>

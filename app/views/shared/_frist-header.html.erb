@@ -24,7 +24,7 @@
       <li class="menu-font"><%= link_to "Kids' room" ,"#" %></li>
     </ul>
   </div>
-    <% if current_page?(action: 'index') %>
+    <% if current_page?(action: 'index', controller:'works') %>
       <%= image_tag("madawakaranai_kame.gif",class:"image-area") %>
     <% else %>
       <%= image_tag("http://drive.google.com/uc?export=view&id=#{@work}",class:"image-area") %>

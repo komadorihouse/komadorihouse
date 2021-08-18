@@ -1,0 +1,24 @@
+<div class="index">
+    <div class="index-title">
+      News Index
+    </div>
+      <div class="index-contents">
+        <ul id="contents-lists">
+          <% @blogslist.each do |list| %>    
+            <li class="contents-list">
+              <div class="news-title-index">
+                <%= link_to list.title ,"#" %>
+              </div>
+              <div class="news-date-index">
+                <%= link_to list.created_at.to_s(:date_jp) ,"#" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <div id="more-lists">
+        </div>
+      </div>
+     <div id="next">
+        過去の記事を表示
+     </div>
+</div>

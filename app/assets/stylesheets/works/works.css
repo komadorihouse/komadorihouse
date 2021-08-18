@@ -391,3 +391,130 @@
 .image-right{
   margin-left: auto;
 }
+
+/* 以下indexページ */
+
+.news-body{
+  width: 100vw;
+  padding-left: 100px;
+  height: auto;
+  font-family: 'Noto Sans JP', sans-serif;
+  display: flex;
+}
+
+#news-index-box{
+  width: 200px;
+  height: auto;
+}
+
+
+
+.news-title-index{
+  color: rgb(60, 60, 60);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.news-date-index{
+  color: rgb(60, 60, 60);
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+#next{
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#news-contents{
+  width: 700px;
+  height: auto;
+  margin-left: 7%;
+  margin-right: auto;
+  margin-top: 50px;
+  font-weight: 200;
+}
+
+.blog-head{
+  margin-top: 40px;
+  display: flex;
+}
+
+.blog-date{
+  width: 200px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+.blog-share{
+  width: 130px;
+  margin-left: calc(700px - 320px);
+}
+
+.sns-rogo{
+  height: 20px;
+  opacity: 0.7;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.sns-rogo:hover{
+  opacity: 1;
+}
+
+.edit-menu{
+  margin-top: 20px;
+  display: flex;
+}
+
+.edit-btn{
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 30px;
+}
+
+.edit-btn:hover{
+  font-weight: 500;
+  color: darkorange;
+}
+
+.delete-btn{
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover{
+  font-weight: 500;
+  color: darkorange;
+}
+
+.blog-menu{
+  position: absolute;
+  margin-left: 99px;
+}
+
+
+.blog-title{
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.blog-image{
+  width: 700px;
+  height: auto;
+  background-color: lightgrey;
+}
+
+.blog-text{
+  letter-spacing: 2px;
+  line-height: 40px;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 300;
+}
