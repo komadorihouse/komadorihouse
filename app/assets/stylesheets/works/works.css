@@ -53,6 +53,30 @@
   flex-wrap: wrap;
 }
 
+#more-contents{
+  transition: 0.3s;
+}
+
+#more-contents:hover{
+  color: darkorange;
+}
+
+#more-index{
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+#next{
+ display: flex;
+ padding-left: 30px;
+}
+
+#more-index:hover{
+  color: darkorange;
+}
+
+/* ここからcontact_form */
+
 .content{
   margin-right: 20px;
   margin-bottom: 30px;
