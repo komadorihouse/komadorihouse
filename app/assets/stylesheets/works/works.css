@@ -555,3 +555,51 @@
 .more-blog:hover{
   color: darkorange;
 }
+
+/* 以下link-page */
+
+.link-body{
+  width: 100vw;
+  min-height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.link-inner{
+  width: 600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-text{
+  font-size: 25px;
+  color: rgb(93, 93, 93);
+  letter-spacing: 5px;
+  font-weight: 300;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#qittabtn{
+  width: auto;
+  height: 50px;
+  opacity: 0.5;
+}
+
+.link-list-inner{
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+}
+
+.account-name-link{
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  margin-left: 20px;
+  letter-spacing: 2px;
+}

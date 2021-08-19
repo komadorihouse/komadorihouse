@@ -1,8 +1,20 @@
 <div class="header">
   <%= render "shared/frist-header"%>
 </div>
-<div class="body">
-  Link
+<div class="link-body">
+  <div class="link-inner">
+    <div class="link-text">
+      コマドリハウスアーティストの関連リンク
+    </div>
+    <div class="link-list">
+      <div class="link-list-inner">
+        <%= link_to('https://qiita.com/komadorihouse' ,target: "_blank") do %>
+          <%= image_tag('qittabtn.png', id:"qittabtn") %>
+          <span class="account-name-link">@komadorihouse</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="footer-area">
   <%= render "shared/footer"%>
