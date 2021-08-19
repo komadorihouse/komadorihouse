@@ -4,7 +4,7 @@ class WorksController < ApplicationController
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
-    @blogslist = Blog.page(params[:index]).per(20).order('created_at DESC')
+    @blogslist = Blog.page(params[:index]).per(30).order('created_at DESC')
     @blogs = Blog.page(params[:contents]).per(10).order('created_at DESC')
     @switch = judge_ip_switch
     if request.xhr?
@@ -59,7 +59,7 @@ class WorksController < ApplicationController
     @type = Type.all
     @creaters = Creater.all
     @info = "Works"
-    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @body_info = "All Works"
@@ -75,6 +75,11 @@ class WorksController < ApplicationController
   end
 
   def creater
+    if params[:id] == "3"
+      @kinari = true
+    else
+      @kinari = false
+    end
     @type = Type.all
     @creaters = Creater.all
     @info = Creater.find(params[:id]).name
