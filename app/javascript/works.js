@@ -29,6 +29,16 @@ $(function(){
     $('#error').remove();
   });
 
+  var contactBtnM = $('#contact-btnm');
+  contactBtnM.on('click',function(){
+    $('#contact-form').slideToggle(200);
+    $('#mobile-menu').slideUp(100);
+    $('#openbtn-top').removeClass('cross-t');
+    $('#openbtn-center').show();
+    $('#openbtn-bottom').removeClass('cross-b');
+    $('#error').remove();
+  });
+
   var contactBtnF = $('#contact-btn2');
   contactBtnF.on('click',function(){
     $('#contact-form').slideToggle(200);

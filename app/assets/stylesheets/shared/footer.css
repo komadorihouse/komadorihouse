@@ -36,3 +36,26 @@
   font-size: 10px;
   color: rgb(157, 157, 157);
 }
+
+@media (max-width: 980px) {
+
+  
+
+  .footer-menus{
+    font-size: 47px;
+    justify-content: start;
+    padding-left: 100px;
+  }
+
+  .footer-menu{
+    margin-bottom: 200px;
+  }
+
+  .footer-icon{
+    position: absolute;
+    margin-top: 110px;
+    left: 210px;
+    width: 500px;
+  }
+
+}
