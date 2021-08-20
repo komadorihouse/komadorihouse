@@ -978,7 +978,34 @@
     color: rgb(72, 72, 72);
     position: absolute;
     left: 60%;
-}
+  }
+
+  /* Show */
+
+  .works-info {
+    font-size: 50px;
+  }
+
+  .small {
+    font-size: 40px;
+  }
+
+  .contents-body{
+    font-size: 50px;
+  }
+
+  .description{
+    font-size: 45px;
+    letter-spacing: 7px;
+    line-height: 90px;
+    margin-top: 100px;
+  }
+
+  #work-image{
+    width: calc(100% - 80px);
+  }
+
+
 
 
 
