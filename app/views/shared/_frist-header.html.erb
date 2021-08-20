@@ -15,13 +15,36 @@
       </div>
     </div>
   </div>
-  <div id="menu">
+  <div id="menuopen-btn">
+    <div id="openbtn-top" class="openbtn">
+    </div>
+    <div id="openbtn-center" class="openbtn cb">
+    </div>
+    <div id="openbtn-bottom" class="openbtn cb">
+    </div>
+  </div>
+    <div id="menu">
     <ul>
       <li class="menu-font"><%= link_to "Works",works_works_path %></li>
       <li class="menu-font"><%= link_to "Profile",profile_works_path %></li>
       <li class="menu-font" id="contact-btn">Contact</li>
       <li class="menu-font"><%= link_to "Link" ,link_works_path %></li>
     </ul>
+  </div>
+  <div id="mobile-menu-area">
+    <div id="mobile-menu" style="display: none;">
+      <ul>
+        <li class="menu-font"><%= link_to "News",root_path %></li>
+        <li><div class="mobilemenu-border"></div></li>
+        <li class="menu-font"><%= link_to "Works",works_works_path %></li>
+        <li><div class="mobilemenu-border"></div></li>
+        <li class="menu-font"><%= link_to "Profile",profile_works_path %></li>
+        <li><div class="mobilemenu-border"></div></li>
+        <li class="menu-font" id="contact-btn">Contact</li>
+        <li><div class="mobilemenu-border"></div></li>
+        <li class="menu-font"><%= link_to "Link" ,link_works_path %></li>
+      </ul>
+    </div>
   </div>
     <% if current_page?(action: 'index', controller:'works') %>
       <%= image_tag("madawakaranai_kame.gif",class:"image-area") %>

@@ -40,5 +40,22 @@ $(function(){
     $('#error').remove();
   });
 
-  
+  $('#menuopen-btn').on('click',function(e){
+    var center = $('#openbtn-center');
+    center.toggle();
+    $('#mobile-menu').slideToggle(70);
+  });
+
+  $('#menuopen-btn').on('click',function(){
+    $('#openbtn-top').toggleClass('cross-t');
+    $('#openbtn-bottom').toggleClass('cross-b');
+  });
+
+  $(window).on('resize',function() {
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      $('#mobile-menu').hide();
+    }
+  });
+
 });

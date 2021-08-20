@@ -4,19 +4,19 @@
 <div class="news-body">
   <div id="news-index-box">
     <%# ここから左辺の目次欄 %>
-  <div class="index">
-    <div class="index-title">
-      News Index
-    </div>
+    <div class="index">
+      <div class="index-title">
+        News Index
+      </div>
       <div class="index-contents">
           <%= render "shared/news_index"%>
         <div id="more-lists">
         </div>
       </div>
-     <div id="next">
-      <%= link_to_next_page @blogslist,'過去の記事を表示', :param_name => 'index' , remote: true, id: 'more-index'%>      
+      <div id="next">
+        <%= link_to_next_page @blogslist,'過去の記事を表示', :param_name => 'index' , remote: true, id: 'more-index'%>      
+      </div>
     </div>
-</div>
   </div>
   <%# ここからNews記事表示域 %>
   <div>
