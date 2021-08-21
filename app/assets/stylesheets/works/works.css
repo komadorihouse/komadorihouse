@@ -809,6 +809,8 @@
   .blog-text{
     letter-spacing: 5px;
     line-height: 70px;
+    font-size: 35px;
+    font-weight: 400;
   }
 
   .profile-border{
@@ -830,9 +832,14 @@
     font-size: 60px;
   }
 
+  .text-title{
+    font-size: 40px;
+  }
+
   .main-text{
     letter-spacing: 8px;
     line-height: 70px;
+    font-size: 40px;
   }
 
   .artists-title {
@@ -866,9 +873,9 @@
 
   .artist-overview {
     margin-top: 50px;
-    line-height: 50px;
+    line-height: 60px;
     letter-spacing: 8px;
-    font-size: 12px;
+    font-size: 30px;
     color: black;
     font-weight: 300;
   }
