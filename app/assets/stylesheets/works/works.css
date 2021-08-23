@@ -162,6 +162,13 @@
   border-radius: 10px;
 }
 
+/* 以下works#show */
+
+#work-image{
+  width: 100%;
+  height: auto;
+}
+
 /* 以下contactform */
 #contactbox{
   width: 100vw;
@@ -760,6 +767,7 @@
     border: none;
   }
 
+
   /* 以下News */
   #news-contents{
     width: 880px;
@@ -1017,7 +1025,8 @@
   }
 
   #work-image{
-    width: calc(100% - 80px);
+    width: 100%;
+    height: auto;
   }
 
 
