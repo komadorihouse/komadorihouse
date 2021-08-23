@@ -1024,8 +1024,13 @@
     margin-top: 100px;
   }
 
+  #youtube{
+    width: calc(100% - 70px);
+    height: 506.25px;
+  }
+
   #work-image{
-    width: 100%;
+    width: calc(100% - 70px);
     height: auto;
   }
 
