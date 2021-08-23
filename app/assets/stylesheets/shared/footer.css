@@ -11,6 +11,7 @@
   margin-left: 50px;
   justify-content: end;
   transition: 0.3s;
+  z-index: 10;
 }
 
 .footer-icon:hover{

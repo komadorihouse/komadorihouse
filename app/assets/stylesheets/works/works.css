@@ -691,6 +691,10 @@
     display: block;
   }
 
+  .info-text{
+    line-height: 70px;
+  }
+
   .works-contents{
     margin: 0px 0px 0px 70px;
     padding: 0px;
@@ -735,12 +739,16 @@
   }
 
   #body-info{
-    font-size: 50px;
+    font-size: 42px;
   }
 
   .artist-menu{
-    margin-left: 40px;
+    margin-left: 20px;
     font-size: 40px;
+  }
+
+  #artist-list{
+    z-index: 40;
   }
 
   #artist-name{
