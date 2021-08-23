@@ -7,7 +7,7 @@
     <meta property="og:url" content="<%= request.url %>">
     <meta property="og:image" content=<%= "http://drive.google.com/uc?export=view&id=#{@work}" %>>
     <meta property="og:site_name" content="コマドリハウス">
-    <meta property="og:description" content="コマドリハウスとは創作活動を行うアーティストグループです。もともとは、コマドリアニメーションを制作するグループから始まりました。人の活動は全てが表現活動であり、社会的な行動だと言えます。どんな人でもアーティストでありうると私たちは考えています。現在、コマドリハウスではアニメーションのみならず、日常生活で生まれるイラスト、デザイン、WEBアプリケーション制作、彫刻、絵画など様々な制作活動を行っています。">
+    <meta property="og:description" content="<%= @description %>">
     
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

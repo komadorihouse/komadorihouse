@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :contact_form
+  before_action :contact_form, :description
 
   def index
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
@@ -178,5 +178,8 @@ class WorksController < ApplicationController
     @contact = Contact.new
     @ip = request.ip
   end
-  
+
+  def description
+    @description = "コマドリハウスとは創作活動を行うアーティストグループです。もともとは、コマドリアニメーションを制作するグループから始まりました。人の活動は全てが表現活動であり、社会的な行動だと言えます。どんな人でもアーティストでありうると私たちは考えています。現在、コマドリハウスではアニメーションのみならず、日常生活で生まれるイラスト、デザイン、WEBアプリケーション制作、彫刻、絵画など様々な制作活動を行っています。"
+  end
 end

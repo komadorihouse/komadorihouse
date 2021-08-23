@@ -2,10 +2,10 @@
   <% @blogslist.each do |list| %>    
     <li class="contents-list">
       <div class="news-title-index">
-        <%= link_to list.title ,"#" %>
+        <%= link_to list.title ,blog_path(list.id) %>
       </div>
       <div class="news-date-index">
-        <%= link_to list.created_at.to_s(:date_jp) ,"#" %>
+        <%= link_to list.created_at.to_s(:date_jp) ,blog_path(list.id) %>
       </div>
     </li>
   <% end %>

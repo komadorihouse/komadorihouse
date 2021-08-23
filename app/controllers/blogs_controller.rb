@@ -17,6 +17,18 @@ class BlogsController < ApplicationController
     end
   end
 
+  def show
+    @blogslist = Blog.page(params[:index]).per(30).order('created_at DESC')
+    @blog = Blog.find(params[:id])
+    @info = "Komadori Blog"
+    @description = @blog.title
+    if @blog.image_1..present?
+      @work = @blog.image_1
+    else
+      @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
+    end
+  end
+
   def edit
     @info = "Edit blog"
     @blog = Blog.find(params[:id])
