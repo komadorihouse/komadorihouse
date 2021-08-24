@@ -21,10 +21,12 @@
         <li class="description">
           <%= simple_format(@item.description) %>
         </li>
-        <li>
           <% if @item.youtube.present? %>
+        <li>   
             <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </li>
           <% end %>
+        <li>
             <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),id:"work-image" %>
         </li>
       </ul>

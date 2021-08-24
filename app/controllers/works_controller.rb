@@ -5,7 +5,7 @@ class WorksController < ApplicationController
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
     @blogslist = Blog.page(params[:index]).per(30).order('created_at DESC')
-    @blogs = Blog.page(params[:contents]).per(10).order('created_at DESC')
+    @blogs = Blog.page(params[:contents]).per(6).order('created_at DESC')
     @switch = judge_ip_switch
     if request.xhr?
       if params.has_key?(:index)
@@ -108,7 +108,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @item = Work.find(params[:id])
     @work = Work.find(params[:id]).image
     @creater = Creater.find(@item.artist_id).name
@@ -138,7 +138,7 @@ class WorksController < ApplicationController
   def list
     judge_ip
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    @workslist = Work.page(params[:list]).per(25).order('created_year DESC')
+    @workslist = Work.page(params[:list]).per(20).order('created_year DESC')
   end
 
   def show_mail
