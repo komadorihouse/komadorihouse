@@ -57,8 +57,45 @@
   margin: 35px 0px;
 }
 
-#work-image {
-  width: auto;
-  height: 506px;
-  object-fit: cover; 
+.work-image {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.slide {
+  height: 1300px;
+ }
+
+ .work-image1 {
+  width: 100%;
+  height: auto;
+}
+
+#left-btn{
+  position: absolute;
+  cursor: pointer;
+  transition: 1s;
+  font-size: 30px;
+  opacity: 0.3;
+}
+
+#right-btn{
+  position: absolute;
+  cursor: pointer;
+  right: 50px;
+  transition: 1s;
+  font-size: 30px;
+}
+
+#left-btn:hover{
+  background-color: rgb(55, 55, 55);
+  opacity: 0.6;
+  color: white;
+}
+
+#right-btn:hover{
+  background-color: rgb(55, 55, 55);
+  opacity: 0.6;
+  color: white;
 }

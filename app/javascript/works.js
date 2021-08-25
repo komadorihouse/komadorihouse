@@ -68,4 +68,88 @@ $(function(){
     }
   });
 
+// headerのメニューanimetion
+  const nomalRogo = $('#nomal');
+  //works
+  $('#works-btn').on('mouseover',function(){
+    nomalRogo.hide();
+    $('#works').show();
+  });
+  $('#works-btn').on('mouseout',function(){
+    $('#works').hide();
+    nomalRogo.show();
+  });
+  //profile
+  $('#profile-btn').on('mouseover',function(){
+    nomalRogo.hide();
+    $('#profile').show();
+  });
+  $('#profile-btn').on('mouseout',function(){
+    $('#profile').hide();
+    nomalRogo.show();
+  });
+  //contact
+  $('#contact-btn').on('mouseover',function(){
+    nomalRogo.hide();
+    $('#contact').show();
+  });
+  $('#contact-btn').on('mouseout',function(){
+    $('#contact').hide();
+    nomalRogo.show();
+  });
+  //link
+  $('#link-btn').on('mouseover',function(){
+    nomalRogo.hide();
+    $('#link').show();
+  });
+  $('#link-btn').on('mouseout',function(){
+    $('#link').hide();
+    nomalRogo.show();
+  });
+  //news
+  $('#rogo-kana').on('mouseover',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      nomalRogo.hide();
+      $('#news').show();
+    }
+  });
+  $('#rogo-kana').on('mouseout',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      $('#news').hide();
+      nomalRogo.show();
+    }
+  });
+
+// showのスライド  
+  var leftBtn = $('#left-btn');
+  var rightBtn = $('#right-btn');
+  var imgNum = 1
+
+  rightBtn.on('click',function(){
+    if(imgNum == 10){
+      imgNum = 1
+      $('#img-8').hide();
+    }else{
+      imgNum += 1
+    }
+    console.log(imgNum)
+    $(`#img-${imgNum-1}`).hide();
+    $(`#img-${imgNum}`).show();
+  });
+
+  leftBtn.on('click',function(){
+    if(imgNum == 1){
+      imgNum = 10
+      $('#img-1').hide();
+    }else{
+      imgNum -= 1
+      $(`#img-${imgNum+1}`).hide();
+      $(`#img-${imgNum}`).show();
+    }
+    console.log(imgNum)
+  });
+
+
 });

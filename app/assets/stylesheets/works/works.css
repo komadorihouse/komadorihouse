@@ -1,7 +1,6 @@
 .body{
   padding:0px 0px 0px 100px;
   display: flex;
-  margin-top: 50px;
 }
 
 .index{
@@ -295,7 +294,7 @@
 #contact-success{
   position: fixed;
   margin: auto;
-  background-color: dodgerblue;
+  background-color: rgb(114, 114, 114);
   color: white;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 500;

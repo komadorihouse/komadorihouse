@@ -21,11 +21,24 @@
         <li class="description">
           <%= simple_format(@item.description) %>
         </li>
-        <li>
           <% if @item.youtube.present? %>
+        <li>   
             <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </li>
           <% end %>
-            <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),id:"work-image" %>
+        <li class="slide">
+            <span id="left-btn">＜</span>
+            <span id="right-btn">＞</span>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),class:"work-image1" ,id:"img-1"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image2}"),class:"work-image" ,id:"img-2"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image3}"),class:"work-image" ,id:"img-3"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image4}"),class:"work-image" ,id:"img-4"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image5}"),class:"work-image" ,id:"img-5"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image6}"),class:"work-image" ,id:"img-6"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image7}"),class:"work-image" ,id:"img-7"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image8}"),class:"work-image" ,id:"img-8"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image9}"),class:"work-image" ,id:"img-9"%>
+              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image10}"),class:"work-image" ,id:"img-10"%>
         </li>
       </ul>
     </div>

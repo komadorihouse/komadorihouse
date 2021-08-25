@@ -5,7 +5,7 @@ class WorksController < ApplicationController
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "News"
     @blogslist = Blog.page(params[:index]).per(30).order('created_at DESC')
-    @blogs = Blog.page(params[:contents]).per(10).order('created_at DESC')
+    @blogs = Blog.page(params[:contents]).per(6).order('created_at DESC')
     @switch = judge_ip_switch
     if request.xhr?
       if params.has_key?(:index)
@@ -24,9 +24,7 @@ class WorksController < ApplicationController
 
   def create
     @workbox = Work.new(work_params)
-    @workbox.image.slice!("https://drive.google.com/file/d/")
-    @workbox.image.slice!("/view?usp=sharing")
-    @workbox.youtube.slice!("https://www.youtube.com/watch?v=")
+    google_url_change
     if @workbox.save
     else
       render :new
@@ -40,8 +38,7 @@ class WorksController < ApplicationController
 
   def update
     @workbox = Work.find(params[:id])
-    @workbox.image.slice!("https://drive.google.com/file/d/")
-    @workbox.image.slice!("/view?usp=sharing")
+    google_url_change
     if @workbox.update(work_params)
       redirect_to work_path(@workbox.id)
     else
@@ -108,7 +105,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    @workslist = Work.page(params[:index]).per(10).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @item = Work.find(params[:id])
     @work = Work.find(params[:id]).image
     @creater = Creater.find(@item.artist_id).name
@@ -138,7 +135,7 @@ class WorksController < ApplicationController
   def list
     judge_ip
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    @workslist = Work.page(params[:list]).per(25).order('created_year DESC')
+    @workslist = Work.page(params[:list]).per(20).order('created_year DESC')
   end
 
   def show_mail
@@ -149,7 +146,26 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title,:image,:description,:youtube,:created_year,:artist_id,:type_id)
+    params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id)
+  end
+
+  def url_change(image_url)
+    image_url.slice!("https://drive.google.com/file/d/")
+    image_url.slice!("/view?usp=sharing")
+  end
+  
+  def google_url_change
+    url_change(@workbox.image)
+    url_change(@workbox.image2)
+    url_change(@workbox.image3)
+    url_change(@workbox.image4)
+    url_change(@workbox.image5)
+    url_change(@workbox.image6)
+    url_change(@workbox.image7)
+    url_change(@workbox.image8)
+    url_change(@workbox.image9)
+    url_change(@workbox.image10)
+    @workbox.youtube.slice!("https://www.youtube.com/watch?v=")
   end
 
   def client_ip
