@@ -63,6 +63,8 @@
       <%= image_tag("profile.png",id:"nomal",class:"image-area-rogo") %>
     <% elsif current_page?(action: 'link', controller:'works') %>
       <%= image_tag("link.png",id:"nomal",class:"image-area-rogo") %>
+    <% else %>
+      <%= image_tag("works.png",id:"nomal",class:"image-area-rogo") %>
     <% end %>
       <%= image_tag("works.png",id:"works",class:"image-area-rogo",style:"display: none;") %>
       <%= image_tag("profile.png",id:"profile",class:"image-area-rogo",style:"display: none;") %>
