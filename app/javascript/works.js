@@ -121,6 +121,20 @@ $(function(){
       nomalRogo.show();
     }
   });
+  $('#news-btn').on('mouseover',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      nomalRogo.hide();
+      $('#news').show();
+    }
+  });
+  $('#news-btn').on('mouseout',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      $('#news').hide();
+      nomalRogo.show();
+    }
+  });
 
 // showのスライド  
   var leftBtn = $('#left-btn');

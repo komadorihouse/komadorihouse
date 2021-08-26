@@ -6,6 +6,15 @@
 </div>
 <header class='frist-header'>
 
+  <div class="title-info">
+    <%= link_to image_tag('komadorihouse_kana.png',id:"rogo-kana" ),'/' %>
+    <%= link_to image_tag('old_rogo_Black_close.png',id:"rogo-close" ),'/' %>
+    <div class="info">
+      <div class="info-text">
+          <%= @info %>
+      </div>
+    </div>
+  </div>
   <div id="menuopen-btn">
     <div id="openbtn-top" class="openbtn">
     </div>
@@ -44,15 +53,6 @@
           <li class="menu-font">Link</li>
         <% end %>
       </ul>
-    </div>
-  </div>
-  <div class="title-info">
-    <%= link_to image_tag('komadorihouse_kana.png',id:"rogo-kana" ),'/' %>
-    <%= link_to image_tag('old_rogo_Black_close.png',id:"rogo-close" ),'/' %>
-  <div class="info">
-      <div class="info-text">
-          <%= @info %>
-      </div>
     </div>
   </div>
     <% if current_page?(action: 'index', controller:'works') %>

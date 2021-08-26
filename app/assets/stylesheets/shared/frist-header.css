@@ -3,13 +3,17 @@
 
 @media (min-width: 1026px) {
   .frist-header{
-    width: 100vw;
+    width: 100%;
     height: 434px;
-    padding: 100px 100px 0px;
+    padding: 100px 0px 0px;
     display: flex;
   }
 
   .title-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     text-align: center;
     width: 200px;
     height: 100%;
@@ -17,7 +21,7 @@
   }
 
   #rogo-kana {
-    margin-top: 60px;
+    margin-left: 0px;
     width: 200px;
   }
 
@@ -34,7 +38,7 @@
   }
 
   #menu {
-    margin-left: 80px;
+    margin-left: 100px;
     font-family: 'Prompt', sans-serif;
     font-weight: 600;
     width: 100px;
@@ -61,36 +65,20 @@
   }
 
   .image-area-rogo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 646px;
     height: 441px;
-    margin-left: 50px;
     object-fit: cover;
     object-position: bottom;
   }
 
   .info{
-    font-family: 'Prompt', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: lightslategrey;
-    display: flex;
-    padding-left: 4px;
-    padding-top: 20px;
+    display: none;
   }
 
-  .info-text{
-    width: auto;
-    margin-top: 40px;
-    margin-bottom: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: start;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    line-height: 19px;
-    overflow-wrap: break-word;
-  }
 }
 /* タブレット表示時 */
 @media (max-width: 1025px) {
@@ -105,6 +93,7 @@
   }
 
   .title-info {
+    position: static;
     font-family: 'Prompt', sans-serif;
     text-align: center;
     width: 500px;
@@ -232,9 +221,9 @@
   .menu-font{
     margin-bottom: 20px;
     margin-top: 20px;
-    padding-top: 80px;
+    padding-top: 50px;
     padding-left: 20px;
-    height: 170px;
+    height: 130px;
   }
 
   .mobilemenu-border{

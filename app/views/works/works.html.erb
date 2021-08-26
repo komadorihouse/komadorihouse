@@ -1,6 +1,7 @@
 <div class="header">
   <%= render "shared/frist-header"%>
 </div>
+
 <div class="body">
   <%# ここから左辺の目次欄 %>
   <%= render "shared/works_index"%>
@@ -27,8 +28,9 @@
     <div id="next-contents">
       <%= link_to_next_page @works,'もっと見る', :param_name => 'contents' , remote: true, id: 'more-contents'%>
     </div>
-   </div>
+  </div>
 </div>
+
 <div class="footer-area">
   <%= render "shared/footer"%>
 </div>
