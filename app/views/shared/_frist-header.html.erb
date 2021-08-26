@@ -55,20 +55,23 @@
       </div>
     </div>
   </div>
-    <% if current_page?(action: 'index', controller:'works') %>
-      <%= image_tag("news.png",id:"nomal",class:"image-area-rogo") %>
-    <% elsif current_page?(action: 'works', controller:'works') %>
-      <%= image_tag("works.png",id:"nomal",class:"image-area-rogo") %>
-    <% elsif current_page?(action: 'profile', controller:'works') %>
-      <%= image_tag("profile.png",id:"nomal",class:"image-area-rogo") %>
-    <% elsif current_page?(action: 'link', controller:'works') %>
-      <%= image_tag("link.png",id:"nomal",class:"image-area-rogo") %>
-    <% else %>
-      <%= image_tag("works.png",id:"nomal",class:"image-area-rogo") %>
+    <%= link_to(profile_works_path) do %>
+      <% if current_page?(action: 'index', controller:'works') %>
+        <%= image_tag("news.png",id:"nomal",class:"image-area-rogo") %>
+      <% elsif current_page?(action: 'works', controller:'works') %>
+        <%= image_tag("works.png",id:"nomal",class:"image-area-rogo") %>
+      <% elsif current_page?(action: 'profile', controller:'works') %>
+        <%= image_tag("profile.png",id:"nomal",class:"image-area-rogo") %>
+      <% elsif current_page?(action: 'link', controller:'works') %>
+        <%= image_tag("link.png",id:"nomal",class:"image-area-rogo") %>
+      <% else %>
+        <%= image_tag("works.png",id:"nomal",class:"image-area-rogo") %>
+      <% end %>
+        <%= image_tag("works.png",id:"works",class:"image-area-rogo",style:"display: none;") %>
+        <%= image_tag("profile.png",id:"profile",class:"image-area-rogo",style:"display: none;") %>
+        <%= image_tag("contact.png",id:"contact",class:"image-area-rogo",style:"display: none;") %>
+        <%= image_tag("link.png",id:"link",class:"image-area-rogo",style:"display: none;") %>
+        <%= image_tag("news.png",id:"news",class:"image-area-rogo",style:"display: none;") %>
+        <%= image_tag("nomal.png",id:"nomalrogo",class:"image-area-rogo",style:"display: none;") %>
     <% end %>
-      <%= image_tag("works.png",id:"works",class:"image-area-rogo",style:"display: none;") %>
-      <%= image_tag("profile.png",id:"profile",class:"image-area-rogo",style:"display: none;") %>
-      <%= image_tag("contact.png",id:"contact",class:"image-area-rogo",style:"display: none;") %>
-      <%= image_tag("link.png",id:"link",class:"image-area-rogo",style:"display: none;") %>
-      <%= image_tag("news.png",id:"news",class:"image-area-rogo",style:"display: none;") %>
 </header>

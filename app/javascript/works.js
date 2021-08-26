@@ -135,6 +135,21 @@ $(function(){
       nomalRogo.show();
     }
   });
+  //nomalrogo表示
+  $('.image-area-rogo').on('mouseover',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      nomalRogo.hide();
+      $('#nomalrogo').show();
+    }
+  });
+  $('.image-area-rogo').on('mouseout',function(){
+    var wWidth = $(window).width();
+    if(wWidth >= 1026 ){
+      $('#nomalrogo').hide();
+      nomalRogo.show();
+    }
+  });
 
 // showのスライド  
   var leftBtn = $('#left-btn');
