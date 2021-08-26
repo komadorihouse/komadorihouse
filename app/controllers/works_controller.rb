@@ -32,14 +32,13 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find(params[:id]).image
     @workbox = Work.find(params[:id])
   end
 
   def update
     @workbox = Work.find(params[:id])
     google_url_change
-    if @workbox.update(work_params)
+    if update_params(@workbox)
       redirect_to work_path(@workbox.id)
     else
       render :edit
@@ -147,6 +146,10 @@ class WorksController < ApplicationController
 
   def work_params
     params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id)
+  end
+
+  def update_params(databox)
+    databox.update(title:"#{databox.title}",image:"#{databox.image}",image2:"#{databox.image2}",image3:"#{databox.image3}",image4:"#{databox.image4}",image5:"#{databox.image5}",image6:"#{databox.image6}",image7:"#{databox.image7}",image8:"#{databox.image8}",image9:"#{databox.image9}",image10:"#{databox.image10}",description:"#{databox.description}",youtube:"#{databox.youtube}",created_year:"#{databox.created_year}",artist_id:"#{databox.artist_id}",type_id:"#{databox.type_id}")
   end
 
   def url_change(image_url)

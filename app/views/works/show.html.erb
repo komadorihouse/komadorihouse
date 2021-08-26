@@ -26,19 +26,31 @@
             <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </li>
           <% end %>
-        <li class="slide">
-            <span id="left-btn">＜</span>
-            <span id="right-btn">＞</span>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),class:"work-image1" ,id:"img-1"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image2}"),class:"work-image" ,id:"img-2"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image3}"),class:"work-image" ,id:"img-3"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image4}"),class:"work-image" ,id:"img-4"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image5}"),class:"work-image" ,id:"img-5"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image6}"),class:"work-image" ,id:"img-6"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image7}"),class:"work-image" ,id:"img-7"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image8}"),class:"work-image" ,id:"img-8"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image9}"),class:"work-image" ,id:"img-9"%>
-              <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image10}"),class:"work-image" ,id:"img-10"%>
+          <%= form_with model:@item,style:"display: none;" do |f| %>
+            <%= f.text_area :image, class:"works-text", id:"image1",style:"display: none;"  %>
+            <%= f.text_area :image2, class:"works-text", id:"image2",style:"display: none;"  %>
+            <%= f.text_area :image3, class:"works-text", id:"image3",style:"display: none;"  %>
+            <%= f.text_area :image4, class:"works-text", id:"image4",style:"display: none;"  %>
+            <%= f.text_area :image5, class:"works-text", id:"image5",style:"display: none;"  %>
+            <%= f.text_area :image6, class:"works-text", id:"image6",style:"display: none;"  %>
+            <%= f.text_area :image7, class:"works-text", id:"image7" ,style:"display: none;" %>
+            <%= f.text_area :image8, class:"works-text", id:"image8" ,style:"display: none;" %>
+            <%= f.text_area :image9, class:"works-text", id:"image9" ,style:"display: none;" %>
+            <%= f.text_area :image10, class:"works-text", id:"image10" ,style:"display: none;" %>
+          <% end %>
+          <span id="">
+          <span id="left-btn">＜</span>
+          <span id="right-btn">＞</span>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),class:"work-image1" ,id:"img-1"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image2}"),class:"work-image" ,id:"img-2"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image3}"),class:"work-image" ,id:"img-3"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image4}"),class:"work-image" ,id:"img-4"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image5}"),class:"work-image" ,id:"img-5"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image6}"),class:"work-image" ,id:"img-6"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image7}"),class:"work-image" ,id:"img-7"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image8}"),class:"work-image" ,id:"img-8"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image9}"),class:"work-image" ,id:"img-9"%>
+          <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image10}"),class:"work-image" ,id:"img-10"%>
         </li>
       </ul>
     </div>
