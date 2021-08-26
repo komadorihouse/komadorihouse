@@ -41,12 +41,16 @@
 
 @media (max-width: 980px) {
 
-  
+  .footer-box{
+    width: 880px;
+    padding-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .footer-menus{
     font-size: 47px;
     justify-content: start;
-    padding-left: 100px;
   }
 
   .footer-menu{
@@ -55,9 +59,10 @@
 
   .footer-icon{
     position: absolute;
-    margin-top: 110px;
     left: 210px;
     width: 500px;
+    margin-top: 110px;
+    margin-left: 25px;
   }
 
 }
