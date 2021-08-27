@@ -32,13 +32,13 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find(params[:id]).image
     @workbox = Work.find(params[:id])
   end
 
   def update
     @workbox = Work.find(params[:id])
-    google_url_change
+    @upwork = params[:work]
+    params_url_change
     if @workbox.update(work_params)
       redirect_to work_path(@workbox.id)
     else
@@ -152,6 +152,20 @@ class WorksController < ApplicationController
   def url_change(image_url)
     image_url.slice!("https://drive.google.com/file/d/")
     image_url.slice!("/view?usp=sharing")
+  end
+
+  def params_url_change
+    url_change(@upwork[:image])
+    url_change(@upwork[:image2])
+    url_change(@upwork[:image3])
+    url_change(@upwork[:image4])
+    url_change(@upwork[:image5])
+    url_change(@upwork[:image6])
+    url_change(@upwork[:image7])
+    url_change(@upwork[:image8])
+    url_change(@upwork[:image9])
+    url_change(@upwork[:image10])
+    @upwork[:youtube].slice!("https://www.youtube.com/watch?v=")
   end
   
   def google_url_change
