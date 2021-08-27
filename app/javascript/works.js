@@ -151,7 +151,7 @@ $(function(){
     }
   });
 
-// showのスライド  
+// showのスライド機能 
   var leftBtn = $('#left-btn');
   var rightBtn = $('#right-btn');
   var imgNum = 1
@@ -187,7 +187,9 @@ $(function(){
   }else if(image10Val == ''){
     var slidePage = 9
   }
-  console.log(slidePage)
+
+  imgNum = 1
+
 
   rightBtn.on('click',function(){
     if(imgNum == slidePage){
@@ -196,7 +198,6 @@ $(function(){
     }else{
       imgNum += 1
     }
-    console.log(imgNum)
     $(`#img-${imgNum-1}`).hide();
     $(`#img-${imgNum}`).show();
   });
@@ -210,8 +211,7 @@ $(function(){
     }
     $(`#img-${imgNum+1}`).hide();
     $(`#img-${imgNum}`).show();
-    console.log(imgNum)
   });
-
+  
 
 });

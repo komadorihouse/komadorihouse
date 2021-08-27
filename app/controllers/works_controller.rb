@@ -37,8 +37,9 @@ class WorksController < ApplicationController
 
   def update
     @workbox = Work.find(params[:id])
-    google_url_change
-    if update_params(@workbox)
+    @upwork = params[:work]
+    params_url_change
+    if @workbox.update(work_params)
       redirect_to work_path(@workbox.id)
     else
       render :edit
@@ -148,13 +149,23 @@ class WorksController < ApplicationController
     params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id)
   end
 
-  def update_params(databox)
-    databox.update(title:"#{databox.title}",image:"#{databox.image}",image2:"#{databox.image2}",image3:"#{databox.image3}",image4:"#{databox.image4}",image5:"#{databox.image5}",image6:"#{databox.image6}",image7:"#{databox.image7}",image8:"#{databox.image8}",image9:"#{databox.image9}",image10:"#{databox.image10}",description:"#{databox.description}",youtube:"#{databox.youtube}",created_year:"#{databox.created_year}",artist_id:"#{databox.artist_id}",type_id:"#{databox.type_id}")
-  end
-
   def url_change(image_url)
     image_url.slice!("https://drive.google.com/file/d/")
     image_url.slice!("/view?usp=sharing")
+  end
+
+  def params_url_change
+    url_change(@upwork[:image])
+    url_change(@upwork[:image2])
+    url_change(@upwork[:image3])
+    url_change(@upwork[:image4])
+    url_change(@upwork[:image5])
+    url_change(@upwork[:image6])
+    url_change(@upwork[:image7])
+    url_change(@upwork[:image8])
+    url_change(@upwork[:image9])
+    url_change(@upwork[:image10])
+    @upwork[:youtube].slice!("https://www.youtube.com/watch?v=")
   end
   
   def google_url_change

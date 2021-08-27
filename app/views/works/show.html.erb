@@ -13,10 +13,13 @@
     <div class="contents-body">
       <ul>
         <li>
-          <span class="small">creater -</span> <%= @creater %>
+          <div id="contents-title"><%= @item.title %></div>
         </li>
         <li>
-          <span class="small">created yaer -</span> <%= @item.created_year %>
+          <span class="small">Creater -</span> <%= @creater %>
+        </li>
+        <li>
+          <span class="small">Created yaer -</span> <%= @item.created_year %>
         </li>
         <li class="description">
           <%= simple_format(@item.description) %>
@@ -38,9 +41,13 @@
             <%= f.text_area :image9, class:"works-text", id:"image9" ,style:"display: none;" %>
             <%= f.text_area :image10, class:"works-text", id:"image10" ,style:"display: none;" %>
           <% end %>
-          <span id="">
-          <span id="left-btn">＜</span>
-          <span id="right-btn">＞</span>
+        <li>
+          <% if @item.image2.present? %>
+            <div id="slide-btn">
+              <div id="left-btn">＜</div>
+              <div id="right-btn">＞</div>
+            </div>
+          <% end %>
           <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image}"),class:"work-image1" ,id:"img-1"%>
           <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image2}"),class:"work-image" ,id:"img-2"%>
           <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image3}"),class:"work-image" ,id:"img-3"%>
