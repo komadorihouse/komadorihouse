@@ -4,13 +4,15 @@
 
 <div class="body">
 <%# ここから左辺の目次欄 %>
-  <%= render "shared/works_index"%>
+  <div class="index-show">
+    <%= render "shared/works_index"%>
+  </div>
   <%# ここからメインコンテンツ表示域 %>
-<div class="works-contents">
+<div id="work-right-view">
   <div class="works-info">
       Overview
   </div>
-    <div class="contents-body">
+  <div class="contents-body">
       <ul>
         <li>
           <div id="contents-title"><%= @item.title %></div>
@@ -26,7 +28,7 @@
         </li>
           <% if @item.youtube.present? %>
         <li>   
-            <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </li>
           <% end %>
           <%= form_with model:@item,style:"display: none;" do |f| %>
@@ -60,9 +62,9 @@
           <%= image_tag ("http://drive.google.com/uc?export=view&id=#{@item.image10}"),class:"work-image" ,id:"img-10"%>
         </li>
       </ul>
-    </div>
   </div>
-</div>
-<div class="footer-area">
-  <%= render "shared/footer"%>
+
+  <div class="footer-area">
+    <%= render "shared/footer"%>
+  </div>
 </div>
