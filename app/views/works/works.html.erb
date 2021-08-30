@@ -28,9 +28,9 @@
     <div id="next-contents">
       <%= link_to_next_page @works,'もっと見る', :param_name => 'contents' , remote: true, id: 'more-contents'%>
     </div>
+  
+    <div class="footer-area">
+      <%= render "shared/footer"%>
+    </div>
   </div>
-</div>
-
-<div class="footer-area">
-  <%= render "shared/footer"%>
 </div>

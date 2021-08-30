@@ -19,15 +19,15 @@
     </div>
   </div>
   <%# ここからNews記事表示域 %>
-  <div id="news-view">
+  <div id="right-view">
     <div id="news-contents">
       <%= render partial: "blog_contents" %>
     </div>
     <div id="next-contents" class="more-blog">
       <%= link_to_next_page @blogs,'過去の記事を表示', :param_name => 'contents' , remote: true, id: 'more-contents'%>
     </div>
+    <div class="footer-area">
+      <%= render "shared/footer"%>
+    </div>
   </div>
-</div>
-<div class="footer-area">
-  <%= render "shared/footer"%>
 </div>
