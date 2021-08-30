@@ -463,6 +463,12 @@
   cursor: pointer;
 }
 
+#right-view{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #news-contents{
   width: 700px;
   height: auto;
@@ -650,6 +656,11 @@
     display: none;
   }
 
+  #right-view{
+    position: static;
+    transform: none;
+  }
+
   .news-body{
     width: calc(100vw - 100px);
     padding: 50px;
@@ -780,10 +791,6 @@
   /* 以下News */
   .news-body{
     width: 880px;
-  }
-
-  #news-view{
-    
   }
 
   #news-contents{
