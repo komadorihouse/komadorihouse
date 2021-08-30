@@ -628,6 +628,7 @@
   .index-show{
     display: none;
   }
+}
 /* PC表示時縮小時 */
 @media (max-width: 1185px) {
   .index{
@@ -1095,11 +1096,6 @@
     width: 880px;
     height: auto;
   }
-
-
-
-
-
 
 
 }
