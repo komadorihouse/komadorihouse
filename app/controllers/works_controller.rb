@@ -39,6 +39,8 @@ class WorksController < ApplicationController
     @workbox = Work.find(params[:id])
     @upwork = params[:work]
     params_url_change
+    # image_delete
+    binding.pry
     if @workbox.update(work_params)
       redirect_to work_path(@workbox.id)
     else
@@ -146,39 +148,18 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id)
-  end
-
-  def url_change(image_url)
-    image_url.slice!("https://drive.google.com/file/d/")
-    image_url.slice!("/view?usp=sharing")
+    params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id,images:[])
   end
 
   def params_url_change
-    url_change(@upwork[:image])
-    url_change(@upwork[:image2])
-    url_change(@upwork[:image3])
-    url_change(@upwork[:image4])
-    url_change(@upwork[:image5])
-    url_change(@upwork[:image6])
-    url_change(@upwork[:image7])
-    url_change(@upwork[:image8])
-    url_change(@upwork[:image9])
-    url_change(@upwork[:image10])
     @upwork[:youtube].slice!("https://www.youtube.com/watch?v=")
+  end
+
+  def image_delete
+    
   end
   
   def google_url_change
-    url_change(@workbox.image)
-    url_change(@workbox.image2)
-    url_change(@workbox.image3)
-    url_change(@workbox.image4)
-    url_change(@workbox.image5)
-    url_change(@workbox.image6)
-    url_change(@workbox.image7)
-    url_change(@workbox.image8)
-    url_change(@workbox.image9)
-    url_change(@workbox.image10)
     @workbox.youtube.slice!("https://www.youtube.com/watch?v=")
   end
 

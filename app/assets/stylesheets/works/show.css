@@ -68,7 +68,8 @@
   display: none;
 }
 
- .work-image1 {
+ #img-1 {
+  display: inline;
   width: 1030px;
   height: auto;
 }

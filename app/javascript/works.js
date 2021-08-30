@@ -157,43 +157,14 @@ $(function(){
   var imgNum = 1
 
   //スライド数の確認
-  var image1Val = $('#image1').val();
-  var image2Val = $('#image2').val();
-  var image3Val = $('#image3').val();
-  var image4Val = $('#image4').val();
-  var image5Val = $('#image5').val();
-  var image6Val = $('#image6').val();
-  var image7Val = $('#image7').val();
-  var image8Val = $('#image8').val();
-  var image9Val = $('#image9').val();
-  var image10Val = $('#image10').val();
-  var slidePage = 10
-  if(image2Val == ''){
-    var slidePage = 1
-  }else if(image3Val == ''){
-    var slidePage = 2
-  }else if(image4Val == ''){
-    var slidePage = 3
-  }else if(image5Val == ''){
-    var slidePage = 4
-  }else if(image6Val == ''){
-    var slidePage = 5
-  }else if(image7Val == ''){
-    var slidePage = 6
-  }else if(image8Val == ''){
-    var slidePage = 7
-  }else if(image9Val == ''){
-    var slidePage = 8
-  }else if(image10Val == ''){
-    var slidePage = 9
-  }
-
-  imgNum = 1
-
+  var imgPage = $('.work-image').length;
+  
+  var slidePage = imgPage
 
   rightBtn.on('click',function(){
     if(imgNum == slidePage){
       imgNum = 1
+      $(`#img-1`).show();
       $(`#img-${slidePage}`).hide();
     }else{
       imgNum += 1
@@ -212,6 +183,7 @@ $(function(){
     $(`#img-${imgNum+1}`).hide();
     $(`#img-${imgNum}`).show();
   });
+
   
 
 });

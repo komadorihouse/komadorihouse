@@ -2,31 +2,21 @@
   <%= render 'layouts/error_messages', model: f.object %>
   <div class="works-form">
     <%= f.label "作品名",for:"title" %><span class="emphasis">必須</span>
-    <%= f.text_field :title, class:"works-text", id:"title" ,placeholder:"作品名" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image" %>
-    <%= f.text_area :image, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
+    <%= f.text_area :title, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
     <%= f.label "作品の説明",for:"description" %>
     <%= f.text_area :description, class:"works-text", id:"text" ,placeholder:"作品の説明" %>
     <%= f.label "Youtubeのリンク",for:"youtube" %>
     <%= f.text_area :youtube, class:"works-text", id:"form-youtube" ,placeholder:"youtubeのリンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image2" %>
-    <%= f.text_area :image2, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image3" %>
-    <%= f.text_area :image3, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image4" %>
-    <%= f.text_area :image4, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image5" %>
-    <%= f.text_area :image5, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image6" %>
-    <%= f.text_area :image6, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image7" %>
-    <%= f.text_area :image7, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image8" %>
-    <%= f.text_area :image8, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image9" %>
-    <%= f.text_area :image9, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "Googleドライブ画像のリンク",for:"image10" %>
-    <%= f.text_area :image10, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
+    <%= f.label :images %>
+    <%= f.file_field :images ,multiple: true %>
+      <% workbox.images.each_with_index do |image,index| %>
+        <div class="check">
+          <%= check_box_tag "del#{index}",image.signed_id %>
+        <div>
+        <%= f.hidden_field :"del#{index}", multiple: true, value: image.signed_id %>
+        <%= image_tag(image ,width:100) %>
+      <% end %>
+      
       <div class="inner-box">
         <%= f.label "制作年",for:"created_year" %> 
         <%= f.text_field :created_year, class:"works-text", id:"year" ,placeholder:"2021", maxlength:"4" %>
