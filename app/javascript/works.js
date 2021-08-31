@@ -1,7 +1,6 @@
 $(function(){
   var list = $('#artists-list');
   var typeList = $('#type-list');
-  
 
   $('#artist-menu').on('click',function(){
     list.slideToggle(100);
@@ -188,6 +187,5 @@ $(function(){
     console.log(slidePage);
   });
 
-  
 
 });
