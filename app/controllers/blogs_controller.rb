@@ -9,7 +9,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    image_src
     if @blog.save
       redirect_to root_path
     else
@@ -34,14 +33,35 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def image_edit
+    @blog = Blog.find(params[:id])
+  end
+
+  def image_delete
+    @blog = Blog.find(params[:id])
+    if params.has_key?(:image_ids)
+      params[:image_ids].each do |image_id|
+        image = @blog.blog_images.find(image_id)
+        image.purge
+      end
+      @blog.update(blog_params)
+    end
+  end
+
   def update
     @blog = Blog.find(params[:id])
-    image_src
     if @blog.update(blog_params)
+      if params[:blog].has_key?(:image_ids)
+        params[:blog][:image_ids].each do |image_id|
+          image = @blog.blog_images.find(image_id)
+          image.purge
+        end
+      end
       redirect_to root_path
     else
       render :edit
-    end  end
+    end
+  end
 
   def destroy
     @blog = Blog.find(params[:id])
@@ -52,16 +72,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :text_1, :image_1, :text_2, :image_2, :text_3, :image_3)
-  end
-
-  def image_src
-    @blog.image_1.slice!("https://drive.google.com/file/d/")
-    @blog.image_1.slice!("/view?usp=sharing")
-    @blog.image_2.slice!("https://drive.google.com/file/d/")
-    @blog.image_2.slice!("/view?usp=sharing")
-    @blog.image_3.slice!("https://drive.google.com/file/d/")
-    @blog.image_3.slice!("/view?usp=sharing")
+    params.require(:blog).permit(:title, :text_1, :image_1, :text_2, :image_2, :text_3, :image_3, blog_images:[])
   end
 
   def client_ip

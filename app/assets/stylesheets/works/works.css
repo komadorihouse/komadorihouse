@@ -575,6 +575,10 @@
   color: darkorange;
 }
 
+#attached-image{
+  display: flex;
+}
+
 /* 以下link-page */
 
 .link-body{

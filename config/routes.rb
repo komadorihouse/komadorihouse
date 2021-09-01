@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :administrators
   root to: 'works#index'
   resources :contacts, only: [:new, :create]
-  resources :blogs, except: :index
+  resources :blogs, except: :index do
+    member do
+      get 'image_edit'
+    end
+    member do
+      get 'image_delete'
+    end
+  end
   resources :works do
     collection do
       get 'works' 

@@ -60,7 +60,6 @@ class WorksController < ApplicationController
     @info = "Works"
     @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
-    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @body_info = "All Works"
     if request.xhr?
       if params.has_key?(:index)

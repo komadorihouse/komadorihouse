@@ -7,6 +7,7 @@
     <%= f.text_area :description, class:"works-text", id:"text" ,placeholder:"作品の説明" %>
     <%= f.label "Youtubeのリンク",for:"youtube" %>
     <%= f.text_area :youtube, class:"works-text", id:"form-youtube" ,placeholder:"youtubeのリンク" %>
+    画像の選択
     <%= f.label :images %>
     <%= f.file_field :images ,multiple: true %>
       <% workbox.images.each_with_index do |image,index| %>

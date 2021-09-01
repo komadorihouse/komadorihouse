@@ -1,17 +1,27 @@
+
+    <p>添付されている画像の編集</p>
+    
+
   <%= form_with(model: blog, data: { remote: false}) do |f| %>
     <%= f.label "記事のタイトル",for:"title" %>
     <%= f.text_field :title, class:"works-text", id:"title" ,placeholder:"記事のタイトル" %>
-    <%= f.label "画像1",for:"image_1" %>
-    <%= f.text_field :image_1, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
+    <div>
+      <div id="attached-image">
+        <% blog.blog_images.each do |image| %>
+          <div>
+            <%= f.check_box :image_ids, {:multiple => true}, image.id, false %>
+            <%= image_tag image, :size=>"100x100" %> <br>
+          </div>
+          <%= f.hidden_field :blog_images, multiple: true, value: image.signed_id %>
+        <% end %>
+      </div>
+        <p>画像を追加する</p>
+        <%= f.label :blog_images %>
+        <%= f.file_field :blog_images, multiple: true %>
+    </div>
+    
     <%= f.label "記事の内容1",for:"text_1" %>
     <%= f.text_area :text_1, class:"works-text", id:"text" ,placeholder:"記事の内容1" %>
-    <%= f.label "画像2",for:"image_2" %>
-    <%= f.text_field :image_2, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "記事の内容2",for:"text_2" %>
-    <%= f.text_area :text_2, class:"works-text", id:"text" ,placeholder:"記事の内容2" %>
-    <%= f.label "画像3",for:"image_3" %>
-    <%= f.text_field :image_3, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
-    <%= f.label "記事の内容3",for:"text_3" %>
-    <%= f.text_area :text_3, class:"works-text", id:"text" ,placeholder:"記事の内容3" %>
+
     <%= f.submit "記事を登録" ,class:"works-text" %>
   <% end %>
