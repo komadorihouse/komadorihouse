@@ -1,4 +1,25 @@
+/* pege top btn */
+#page_top{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border: grey solid 1px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 100px;
+  transition: 0.5s;
+  cursor: pointer;
+}
 
+#page_top:hover{
+  background-color: grey;
+  color: white;
+  opacity: 0.7;
+}
+
+/* 共通設定 */
 .body{
   padding:0px 0px 0px 100px;
   display: flex;
@@ -101,6 +122,7 @@
 }
 
 .content-title{
+  line-height: 53px;
   width: 200px;
   height: 48px;
 }
@@ -1128,6 +1150,5 @@
     width: 880px;
     height: auto;
   }
-
 
 }

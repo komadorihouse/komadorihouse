@@ -186,5 +186,22 @@ $(function(){
     console.log(slidePage);
   });
 
+  // pege top btn
+  var pageTop = $('#page_top');
+
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 400 ){
+    pageTop.fadeIn();
+    }else{
+      pageTop.fadeOut();
+    };
+  });
+  pageTop.on('click',function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 1000);
+  });
+
+
 
 });
