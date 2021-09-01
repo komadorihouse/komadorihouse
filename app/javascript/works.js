@@ -158,14 +158,15 @@ $(function(){
   //スライド数の確認
   var imgPage = $('.work-image').length;
   var slidePage = imgPage
+
   rightBtn.on('click',function(){
     if(imgNum == slidePage){
       imgNum = 1
       $(`#img-1`).fadeIn();
-      $(`#img-${slidePage}`).fadeOut();
+      $(`#img-${slidePage}`).hide();
     }else{
       imgNum += 1
-      $(`#img-${imgNum-1}`).fadeOut();
+      $(`#img-${imgNum-1}`).hide();
     }
     $(`#img-${imgNum}`).fadeIn();
     console.log(imgNum);
@@ -175,10 +176,10 @@ $(function(){
   leftBtn.on('click',function(){
     if(imgNum == 1){
       imgNum = slidePage
-      $('#img-1').fadeOut();
+      $('#img-1').hide();
     }else{
       imgNum -= 1
-      $(`#img-${imgNum+1}`).fadeOut();
+      $(`#img-${imgNum+1}`).hide();
     }
     $(`#img-${imgNum}`).fadeIn();
     console.log(imgNum);
