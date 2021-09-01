@@ -157,9 +157,7 @@ $(function(){
 
   //スライド数の確認
   var imgPage = $('.work-image').length;
-  
   var slidePage = imgPage
-
   rightBtn.on('click',function(){
     if(imgNum == slidePage){
       imgNum = 1
