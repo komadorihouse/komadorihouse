@@ -39,9 +39,13 @@ class WorksController < ApplicationController
     @workbox = Work.find(params[:id])
     @upwork = params[:work]
     params_url_change
-    # image_delete
-    binding.pry
     if @workbox.update(work_params)
+      if params[:work].has_key?(:image_ids)
+        params[:work][:image_ids].each do |image_id|
+          image = @workbox.images.find(image_id)
+          image.purge
+        end
+      end
       redirect_to work_path(@workbox.id)
     else
       render :edit

@@ -37,17 +37,6 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
-  def image_delete
-    @blog = Blog.find(params[:id])
-    if params.has_key?(:image_ids)
-      params[:image_ids].each do |image_id|
-        image = @blog.blog_images.find(image_id)
-        image.purge
-      end
-      @blog.update(blog_params)
-    end
-  end
-
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)

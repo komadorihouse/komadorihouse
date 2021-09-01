@@ -2,22 +2,24 @@
   <%= render 'layouts/error_messages', model: f.object %>
   <div class="works-form">
     <%= f.label "作品名",for:"title" %><span class="emphasis">必須</span>
-    <%= f.text_area :title, class:"works-text", id:"image" ,placeholder:"Googleドライブの画像リンク" %>
+    <%= f.text_area :title, class:"works-text", id:"image" ,placeholder:"作品の題名" %>
     <%= f.label "作品の説明",for:"description" %>
     <%= f.text_area :description, class:"works-text", id:"text" ,placeholder:"作品の説明" %>
     <%= f.label "Youtubeのリンク",for:"youtube" %>
     <%= f.text_area :youtube, class:"works-text", id:"form-youtube" ,placeholder:"youtubeのリンク" %>
-    画像の選択
+    <p id="blog-new-info">作品情報編集時、削除したい画像はチェック入をれる</p>
+    <div id="attached-image">
+        <% workbox.images.each do |image| %>
+          <div class="attached-image-box">
+            <%= f.check_box :image_ids, {:multiple => true,:class => "image-check"}, image.id, false %>
+            <%= image_tag image, :size=>"100x100" %> <br>
+          </div>
+          <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+        <% end %>
+      </div>
+    <p>画像の追加</p>
     <%= f.label :images %>
     <%= f.file_field :images ,multiple: true %>
-      <% workbox.images.each_with_index do |image,index| %>
-        <div class="check">
-          <%= check_box_tag "del#{index}",image.signed_id %>
-        <div>
-        <%= f.hidden_field :"del#{index}", multiple: true, value: image.signed_id %>
-        <%= image_tag(image ,width:100) %>
-      <% end %>
-      
       <div class="inner-box">
         <%= f.label "制作年",for:"created_year" %> 
         <%= f.text_field :created_year, class:"works-text", id:"year" ,placeholder:"2021", maxlength:"4" %>
@@ -33,4 +35,4 @@
     </div>
     <%= f.submit "作品を登録" ,class:"works-text" %>
   </div>
-  <% end %>
+<% end %>

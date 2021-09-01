@@ -6,10 +6,11 @@
     <%= f.label "記事のタイトル",for:"title" %>
     <%= f.text_field :title, class:"works-text", id:"title" ,placeholder:"記事のタイトル" %>
     <div>
+      <p id="blog-new-info">記事編集時、削除したい画像はチェック入をれる</p>
       <div id="attached-image">
         <% blog.blog_images.each do |image| %>
-          <div>
-            <%= f.check_box :image_ids, {:multiple => true}, image.id, false %>
+          <div class="attached-image-box">
+            <%= f.check_box :image_ids, {:multiple => true,:class => "image-check"}, image.id, false %>
             <%= image_tag image, :size=>"100x100" %> <br>
           </div>
           <%= f.hidden_field :blog_images, multiple: true, value: image.signed_id %>
