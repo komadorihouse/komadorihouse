@@ -21,7 +21,11 @@
           <%= link_to work.title ,edit_work_path(work.id) %><%= link_to work.created_year ,edit_work_path(work.id),class:"year" %>
         </div>
         <div class="item image">
-          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"item-image") ,edit_work_path(work.id) %>
+            <% work.images.each_with_index do |image,i| %>
+              <% if i == 0 %>
+                <%= image_tag image,class:"item-image" %>
+              <% end %>
+            <% end %>
         </div>
         <div class="item">
           <div class="list-description-box">
