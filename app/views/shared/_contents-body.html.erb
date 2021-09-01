@@ -3,7 +3,11 @@
     <% unless work.artist_id == 0 || work.artist_id == 4 || work.artist_id == 5 || work.artist_id == 8 %>
       <div class="content">
         <div>
-          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"content-image") ,work_path(work.id)%>
+          <% work.images.each_with_index do |image,index| %>
+            <% if index == 0 %>
+              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id)%>
+            <% end %>
+          <% end %>
         </div>
         <div class="content-title">
           <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
@@ -16,7 +20,11 @@
     <% unless work.artist_id == 0 || work.artist_id == 3 || work.artist_id == 4 || work.artist_id == 5 || work.artist_id == 8 %>
       <div class="content">
         <div>
-          <%= link_to image_tag("http://drive.google.com/uc?export=view&id=#{work.image}",class:"content-image") ,work_path(work.id)%>
+          <% work.images.each_with_index do |image,index| %>
+            <% if index == 0 %>
+              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id)%>
+            <% end %>
+          <% end %>
         </div>
         <div class="content-title">
           <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>

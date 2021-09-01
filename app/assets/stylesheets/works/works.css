@@ -41,6 +41,10 @@
   transform: translateX(-50%);
 }
 
+#body-info{
+  margin-bottom: 20px;
+}
+
 .works-contents{
   margin: 0px 0px 0px 70px;
   font-family: 'Prompt', sans-serif;
@@ -118,7 +122,7 @@
 }
 
 .artist-menu{
-  margin-left: 30px;
+  margin-right: 30px;
   cursor: pointer;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 300;
@@ -133,7 +137,8 @@
 #artists-list{
   position: absolute;
   background-color: rgb(255, 255, 255);
-  margin-left: 80px;
+  margin-left: 0px;
+  margin-top: 20px;
   border:rgb(220, 220, 220) solid 1px;
   border-radius: 10px;
 }
@@ -155,7 +160,8 @@
 #type-list{
   position: absolute;
   background-color: rgb(255, 255, 255);
-  margin-left: 230px;
+  margin-left: 130px;
+  margin-top: 20px;
   border:rgb(220, 220, 220) solid 1px;
   border-radius: 10px;
 }
@@ -555,6 +561,7 @@
   width: 700px;
   height: auto;
   background-color: lightgrey;
+  margin-bottom: 30px;
 }
 
 .blog-text{
@@ -573,6 +580,26 @@
 
 .more-blog:hover{
   color: darkorange;
+}
+
+#attached-image{
+  display: flex;
+}
+
+  /* blogform画面 */
+#blog-new-info{
+  color:blue;
+}
+
+.attached-image-box{
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.image-check{
+  position: relative;
+  left: 23px;
+  bottom: 80px;
 }
 
 /* 以下link-page */
@@ -628,6 +655,7 @@
   .index-show{
     display: none;
   }
+}
 /* PC表示時縮小時 */
 @media (max-width: 1185px) {
   .index{
@@ -731,6 +759,7 @@
     margin-right: auto;
     width: 700px;
   }
+
   .edit-menu{
     margin-top: 0px;
     margin-left: 200px;
@@ -802,8 +831,11 @@
   }
 
   .artist-menu{
-    margin-left: 20px;
-    font-size: 40px;
+    margin-right: 50px;
+    font-size: 30px;
+    border: gray solid 1px;
+    border-radius: 60px;
+    padding:10px 30px;
   }
 
   #artist-list{
@@ -1095,11 +1127,6 @@
     width: 880px;
     height: auto;
   }
-
-
-
-
-
 
 
 }

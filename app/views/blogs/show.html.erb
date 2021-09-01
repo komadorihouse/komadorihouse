@@ -37,29 +37,12 @@
           <% end %>
         </div>
       </div>
-      <%= link_to(blog_path(@blog.id) , remote: false ) do %>
         <div class="blog-title">
           <%= @blog.title %>
         </div>
-        <% unless @blog.image_1 == "" %>
-          <%= image_tag("http://drive.google.com/uc?export=view&id=#{@blog.image_1}", class:"blog-image") %>
+        <% @blog.blog_images.each do |image| %>
+            <%= image_tag(image, class:"blog-image") %>
         <% end %>
-        <div class="blog-text">
-          <%= @blog.text_1 %>
-        </div>
-        <% unless @blog.image_2 == "" %>
-          <%= image_tag("http://drive.google.com/uc?export=view&id=#{@blog.image_2}", class:"blog-image" ) %>
-        <% end %>
-        <div class="blog-text">
-          <%= @blog.text_2 %>
-        </div>
-        <% unless @blog.image_3 == "" %>
-          <%= image_tag("http://drive.google.com/uc?export=view&id=#{@blog.image_3}", class:"blog-image") %>
-        <% end %>
-        <div class="blog-text">
-          <%= @blog.text_3 %>
-        </div>
-      <% end %>
     <div class="profile-border">
     </div>
     <div id="next-contents" class="more-blog">

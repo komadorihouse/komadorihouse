@@ -40,6 +40,12 @@ class WorksController < ApplicationController
     @upwork = params[:work]
     params_url_change
     if @workbox.update(work_params)
+      if params[:work].has_key?(:image_ids)
+        params[:work][:image_ids].each do |image_id|
+          image = @workbox.images.find(image_id)
+          image.purge
+        end
+      end
       redirect_to work_path(@workbox.id)
     else
       render :edit
@@ -58,7 +64,6 @@ class WorksController < ApplicationController
     @info = "Works"
     @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
-    @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @body_info = "All Works"
     if request.xhr?
       if params.has_key?(:index)
@@ -146,39 +151,18 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id)
-  end
-
-  def url_change(image_url)
-    image_url.slice!("https://drive.google.com/file/d/")
-    image_url.slice!("/view?usp=sharing")
+    params.require(:work).permit(:title,:image,:image2,:image3,:image4,:image5,:image6,:image7,:image8,:image9,:image10,:description,:youtube,:created_year,:artist_id,:type_id,images:[])
   end
 
   def params_url_change
-    url_change(@upwork[:image])
-    url_change(@upwork[:image2])
-    url_change(@upwork[:image3])
-    url_change(@upwork[:image4])
-    url_change(@upwork[:image5])
-    url_change(@upwork[:image6])
-    url_change(@upwork[:image7])
-    url_change(@upwork[:image8])
-    url_change(@upwork[:image9])
-    url_change(@upwork[:image10])
     @upwork[:youtube].slice!("https://www.youtube.com/watch?v=")
+  end
+
+  def image_delete
+    
   end
   
   def google_url_change
-    url_change(@workbox.image)
-    url_change(@workbox.image2)
-    url_change(@workbox.image3)
-    url_change(@workbox.image4)
-    url_change(@workbox.image5)
-    url_change(@workbox.image6)
-    url_change(@workbox.image7)
-    url_change(@workbox.image8)
-    url_change(@workbox.image9)
-    url_change(@workbox.image10)
     @workbox.youtube.slice!("https://www.youtube.com/watch?v=")
   end
 
