@@ -11,6 +11,7 @@
   border-radius: 100px;
   transition: 0.5s;
   cursor: pointer;
+  font-family: 'Prompt', sans-serif;
 }
 
 #page_top:hover{
@@ -688,6 +689,26 @@
 
 /* タブレット表示時 */
 @media (max-width: 1025px) {
+  /* pege top btn */
+#page_top{
+  font-weight: 500;
+  font-size: 30px;
+  right: 50px;
+  bottom: 50px;
+  background-color: grey;
+  color: white;
+  opacity: 0.5;
+  height: 200px;
+  width: 200px;
+  line-height: 200px;
+  border-radius: 200px;
+}
+
+#page_top:hover{
+  background-color: grey;
+  color: white;
+  opacity: 0.5;
+}
   
   /* 以下Works */
   .body{
