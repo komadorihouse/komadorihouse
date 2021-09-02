@@ -77,7 +77,7 @@ class WorksController < ApplicationController
   end
 
   def creater
-    if params[:id] == "3"
+    if params[:id] == "3" || params[:id] == "8"
       @kinari = true
     else
       @kinari = false

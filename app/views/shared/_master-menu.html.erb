@@ -5,7 +5,7 @@
     </li>
   <% end %>
 <% @creaters.each do |creater| %>
-  <% unless creater.id == 0 || creater.id == 4 || creater.id == 5 || creater.id == 8 %>
+  <% unless creater.id == 0 || creater.id == 4 || creater.id == 5  %>
     <%= link_to(creater_work_path(creater.id), remote: true) do %>
       <li id="artist-name" class="artist-name <%= "a#{creater.id}" %>">
         <%= creater.name  %>
