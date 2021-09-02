@@ -188,13 +188,20 @@ $(function(){
 
   // pege top btn
   var pageTop = $('#page_top');
+  var appear = false;
 
   $(window).scroll(function(){
     if($(this).scrollTop() > 400 ){
-    pageTop.fadeIn();
+      if(appear == false){
+        appear = true;
+        pageTop.show();
+      }
     }else{
-      pageTop.fadeOut();
-    };
+      if(appear == true){
+        appear = false;
+        pageTop.hide();
+      }
+    }
   });
   pageTop.on('click',function () {
     $('body,html').animate({

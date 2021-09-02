@@ -1,6 +1,7 @@
 /* pege top btn */
 #page_top{
   position: fixed;
+  opacity: 1;
   right: 50px;
   bottom: 50px;
   border: grey solid 1px;
@@ -692,9 +693,9 @@
   /* pege top btn */
 #page_top{
   font-weight: 500;
-  font-size: 30px;
-  right: 50px;
-  bottom: 50px;
+  font-size: 40px;
+  right: 0px;
+  bottom: 300px;
   background-color: grey;
   color: white;
   opacity: 0.5;
