@@ -1,4 +1,5 @@
 $(function(){
+
   var list = $('#artists-list');
   var typeList = $('#type-list');
 
@@ -162,13 +163,12 @@ $(function(){
   rightBtn.on('click',function(){
     if(imgNum == slidePage){
       imgNum = 1
-      $(`#img-1`).fadeIn(700);
-      $(`#img-${slidePage}`).hide();
+      $(`#img-${slidePage}`).fadeOut(700);
     }else{
       imgNum += 1
-      $(`#img-${imgNum-1}`).hide();
+      $(`#img-${imgNum-1}`).fadeOut(700);
     }
-    $(`#img-${imgNum}`).fadeIn(700);
+    $(`#img-${imgNum}`).delay(700).fadeIn(700);
     console.log(imgNum);
     console.log(slidePage);
   });
@@ -176,12 +176,12 @@ $(function(){
   leftBtn.on('click',function(){
     if(imgNum == 1){
       imgNum = slidePage
-      $('#img-1').hide();
+      $('#img-1').fadeOut(700);
     }else{
       imgNum -= 1
-      $(`#img-${imgNum+1}`).hide();
+      $(`#img-${imgNum+1}`).fadeOut(700);
     }
-    $(`#img-${imgNum}`).fadeIn(700);
+    $(`#img-${imgNum}`).delay(700).fadeIn(700);
     console.log(imgNum);
     console.log(slidePage);
   });
