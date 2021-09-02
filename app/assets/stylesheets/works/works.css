@@ -124,8 +124,8 @@
 }
 
 .content-title{
-  line-height: 53px;
-  width: 200px;
+  line-height: 17px;
+  width: 400px;
   height: 48px;
 }
 
@@ -859,6 +859,7 @@
   }
 
   .content-title{
+    line-height: 53px;
     width: 100%;
   }
 
