@@ -215,6 +215,15 @@
 }
 
 /* 以下works#show */
+.works-info{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.showtext{
+  margin-top: 20px;
+}
 
 .work-image-list{
   text-align: center;
