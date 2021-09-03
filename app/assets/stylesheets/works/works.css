@@ -87,6 +87,18 @@
   flex-wrap: wrap;
 }
 
+.contents-body-show{
+  width: 600px;
+  padding: 0px;
+}
+
+#work-show{
+  background-color: black;
+  color: white;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+
 #more-contents{
   font-weight: 600;
   transition: 0.3s;
@@ -204,13 +216,21 @@
 
 /* 以下works#show */
 
-#youtube{
-  width: 100%;
-  height: 506.25px;
+.work-image-list{
+  text-align: center;
 }
 
-#work-image{
-  width: 100%;
+#youtube{
+  width: 600px;
+  height: 337.5px;
+}
+
+#img-1{
+  width: 600px;
+}
+
+.work-image{
+  width: 600px;
   height: auto;
 }
 
@@ -720,10 +740,25 @@
     display: flex;
   }
 
+
   #work-right-view{
     position: static;
     transform: none;
+    width: 1025px;
     padding: 0px 50px;
+  }
+
+  #contents-body-show{
+    width: 100%;
+  }
+
+  #work-show{
+    width: 865px;
+  }
+
+  #youtube{
+    width: 925px;
+    height: 520px;
   }
 
   .works-contents{
@@ -748,14 +783,31 @@
   }
 
   /* work show */
+  #slide-btn{
+    width: 925px;
+  }
+
+  #right-btn {
+    margin-left: 801px;
+    margin-right: 0px;
+  }
+
+  #right-btn:hover {
+    margin-left: 811px;
+    margin-right: 0px;
+  }
+
+  #img-1{
+    width: 925px;
+  }
 
   .work-image1{
-    width: 1030px;
+    width: 925px;
     height: auto;
   }
 
   .work-image{
-    width: 1030px;
+    width: 925px;
     height: auto;
   }
 
@@ -854,6 +906,23 @@
     width: 100vw;
     display: block;
     flex-wrap: wrap;
+  }
+
+  .contents-body-show{
+    width: 880px;
+    display: block;
+    flex-wrap: wrap;
+  }
+  
+  #work-show{
+    background-color: white;
+    color: black;
+    margin-bottom: 50px;
+    padding: 0px;
+  }
+
+  .showtext{
+    font-size: 40px;
   }
 
   .content{
@@ -1171,12 +1240,18 @@
 
   /* Show */
 
+  #work-right-view {
+    width: 880px;
+  }
+
   .works-info {
+    width: 880px;
+    margin-right: 0px;
     font-size: 50px;
   }
 
   .small {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .contents-body{
@@ -1188,11 +1263,16 @@
     letter-spacing: 7px;
     line-height: 90px;
     margin-top: 100px;
+    color: white;
   }
 
   #youtube{
     width: 100%;
     height: 506.25px;
+  }
+
+  #img-1{
+    width: 880px;
   }
 
   .work-image1{
@@ -1203,6 +1283,20 @@
   .work-image{
     width: 880px;
     height: auto;
+  }
+
+  #slide-btn{
+    width: 880px;
+  }
+
+  #right-btn {
+    margin-left: 676px;
+    margin-right: 0px;
+  }
+
+  #right-btn:hover {
+    margin-left: 676px;
+    margin-right: 0px;
   }
 
 }

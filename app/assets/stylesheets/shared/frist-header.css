@@ -85,7 +85,7 @@
 
   .frist-header{
     width: 100vw;
-    height: 700px;
+    height: auto;
     margin-left: 0px;
     padding: 100px 0px 0px;
     text-align: center;
@@ -103,17 +103,21 @@
     margin-right: auto;
   }
 
+  .info{
+    height: auto;
+  }
+
   .info-text{
     width: auto;
+    height: auto;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: start;
     font-size: 50px;
     font-weight: 300;
     letter-spacing: 4px;
-    line-height: 19px;
-    overflow-wrap: break-word;
+    line-height: 60px;
   }
 
   #rogo-kana {

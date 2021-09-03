@@ -13,26 +13,30 @@
       Overview
   </div>
   
-  <div class="contents-body">
-      <ul>
+  <div class="contents-body-show">
+      <ul id="work-show">
         <li>
           <div id="contents-title"><%= @item.title %></div>
         </li>
         <li>
-          <span class="small">Creater -</span> <%= @creater %>
+          <span class="small">Creater -</span><span class="showtext"><%= @creater %></span>
         </li>
         <li>
-          <span class="small">Created yaer -</span> <%= @item.created_year %>
+          <span class="small">Created yaer -</span><span class="showtext"> <%= @item.created_year %></span>
         </li>
-        <li class="description">
-          <%= simple_format(@item.description) %>
+        <li>
+          <span class="showtext">
+            <%= simple_format(@item.description) %>
+          </span>
         </li>
+      </ul>
+      <ul>
           <% if @item.youtube.present? %>
-        <li>   
+        <li class="work-image-list">   
           <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </li>
           <% end %>
-        <li>
+        <li class="work-image-list">
           <% if @item.images[1].present? %>
             <div id="slide-btn">
               <div id="left-btn">＜</div>
