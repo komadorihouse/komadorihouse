@@ -1,0 +1,31 @@
+<div class="header">
+  <%= render "shared/frist-header"%>
+</div>
+<div id="work-right-view">
+  <div class="works-info">
+      Enlarged view
+  </div>
+  
+  <div class="contents-body-show-zoom">
+      <ul>
+        <li class="work-image-list">
+          <% if @item.images[1].present? %>
+            <div id="slide-btn">
+              <div id="left-btn">＜</div>
+              <div id="right-btn">＞</div>
+            </div>
+          <% end %>
+          <% @item.images.each_with_index do |image,i|%>
+            <%= image_tag (image),class:"work-image" ,id:"img-#{i+1}"%>
+          <% end %>
+        </li>
+      </ul>
+  </div>
+
+  <div class="footer-area">
+    <%= render "shared/footer"%>
+  </div>
+</div>
+<div id="page_top" style="display: none;">
+  Page Top
+</div>

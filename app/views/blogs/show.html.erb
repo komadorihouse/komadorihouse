@@ -20,7 +20,7 @@
   </div>
   <%# ここからNews記事表示域 %>
   <div id="right-view">
-    <div id="news-contents">
+    <div id="news-contents-show">
       <div class="blog-head">
         <div class="blog-date">
           <%= @blog.created_at.to_s(:date_jp) %>
@@ -45,13 +45,14 @@
         <% end %>
     <div class="profile-border">
     </div>
-    <div id="next-contents" class="more-blog">
-    </div>
-    <div class="footer-area">
-      <%= render "shared/footer"%>
+    <div id="mobile-blog-box">
+      <div class="footer-area">
+        <%= render "shared/footer"%>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div id="page_top" style="display: none;">
   Page Top

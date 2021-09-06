@@ -22,13 +22,20 @@
 }
 
 /* 共通設定 */
+
 .body{
   padding:0px 0px 0px 100px;
   display: flex;
+  padding-top: 0px;
+}
+
+html{
+  background-color: #f8f8f8;
 }
 
 .index{
   width: 200px;
+  padding-top: 50px;
   font-family: 'Prompt', sans-serif;
 }
 
@@ -63,6 +70,9 @@
   left: 52%;
   transform: translateX(-50%);
   font-family: 'Prompt', sans-serif;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #body-info{
@@ -74,6 +84,7 @@
   font-family: 'Prompt', sans-serif;
   width: calc(100% - 280px);
   padding: 0px 0px 0px 10px;
+  margin-top: 50px;
 }
 
 .selected-works{
@@ -93,10 +104,9 @@
 }
 
 #work-show{
-  background-color: black;
-  color: white;
+  color: black;
   margin-bottom: 50px;
-  padding: 30px;
+  padding: 0px;
 }
 
 #more-contents{
@@ -387,18 +397,22 @@
 /* 以下プロフィール */
 
 .profile{
-  width: 100vw;
+  width: 601.55;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  font-weight: 300;
+  padding: 0px 50px;
   height: auto;
   font-family: 'Noto Sans JP', sans-serif;
+  position: absolute;
+    left: 52%;
+    transform: translateX(-50%);
 }
 
 #about{
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  color: rgb(60, 60, 60);
-  font-weight: 200;
+  width: 100%;
+  padding-top: 50px;
+  color: rgb(0, 0, 0);
 }
 
 .text-title{
@@ -416,13 +430,10 @@
 }
 
 #about-artists{
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   margin-top: 100px;
-  color: rgb(60, 60, 60);
-  font-weight: 200;
-  letter-spacing: 5px;
+  color: rgb(0, 0, 0);
+  
 }
 
 #artists-title-box{
@@ -434,12 +445,12 @@
 }
 
 .artists-title{
-  font-size: 30px;
-  color: rgb(99, 99, 99);
+  font-size: 50px;
+  color: rgb(0, 0, 0);
 }
 
 #artists-border{
-  width: calc(800px - 115.25px - 30px);
+  width: 100%;
   margin-left: 30px;
   height: 1px;
   background-color: rgb(150, 150, 150);
@@ -488,13 +499,15 @@
 }
 
 .profile-border{
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 100%;
   height: 1px;
   background-color: rgb(150, 150, 150);
 }
 
 .image-right{
-  margin-left: auto;
+  margin-left: 145px;
 }
 
 /* 以下indexページ */
@@ -534,20 +547,19 @@
 
 #right-view{
   position: absolute;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
+  background-color: white;
 }
 
 #news-contents{
-  width: 700px;
+  width: 600px;
   height: auto;
-  margin-left: 7%;
-  margin-top: 50px;
+  padding: 50px;
   font-weight: 200;
 }
 
 .blog-head{
-  margin-top: 40px;
   display: flex;
 }
 
@@ -559,7 +571,7 @@
 
 .blog-share{
   width: 130px;
-  margin-left: calc(700px - 320px);
+  margin-left: calc(700px - 420px);
 }
 
 .sns-rogo{
@@ -615,7 +627,7 @@
 }
 
 .blog-image{
-  width: 700px;
+  width: 600px;
   height: auto;
   background-color: lightgrey;
   margin-bottom: 30px;
@@ -641,6 +653,10 @@
 
 #attached-image{
   display: flex;
+}
+
+#mobile-blog-box{
+  display: none;
 }
 
   /* blogform画面 */
@@ -670,8 +686,13 @@
 .link-inner{
   width: 600px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  left: 52%;
+  transform: translateX(-50%);
+  font-family: 'Prompt', sans-serif;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .link-text{
@@ -687,6 +708,10 @@
   width: auto;
   height: 50px;
   opacity: 0.5;
+}
+
+.link-list{
+  height: 370px;
 }
 
 .link-list-inner{
@@ -1010,11 +1035,29 @@
   /* 以下News */
   .news-body{
     width: 880px;
+    padding-left: 0px;
+  }
+
+  #mobile-blog-box{
+    width: 100%;
+    height: 250px;
+    display: block;
+  }
+
+  #news-contents-show{
+    height: auto;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: 300;
+    width: 880px;
+    position: absolute;
+    bottom: -10px; 
+    background-color: white;
   }
 
   #news-contents{
     width: 880px;
-    margin-left: 0px;
   }
 
   .blog-head{
@@ -1140,6 +1183,12 @@
     font-weight: 300;
   }
 
+  #mobile-block-pro{
+   width: 100%;
+   height: 350px;
+   background-color: white;
+  }
+
   /* contact-form */
   #contact-form{
     width: calc(100vw - 200px);
@@ -1219,10 +1268,17 @@
   }
 
   /* Link */
+  .link-body{
+    width: 980px;
+  }
+
   .link-inner {
-    width: calc(100% - 200px);
-    height: auto;
-    padding: 100px;
+    width: 880px;
+    height: 960px;
+    padding: 50px;
+    position: absolute;
+    bottom: -10px; 
+    margin-left: -30px;
   }
 
   .link-text {
@@ -1232,7 +1288,7 @@
   }
 
   .link-list-inner {
-    width: calc(100% - 200px);
+    width: 680px;
     padding: 100px;
   }
 

@@ -122,6 +122,11 @@ class WorksController < ApplicationController
     end
   end
 
+  def zoom
+    @item = Work.find(params[:id])
+    @info = @item.title
+  end
+
   def profile
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
     @info = "Profile"

@@ -8,7 +8,7 @@
 .footer-icon{
   width: 150px;
   height: auto;
-  margin-left: 50px;
+  margin-left: 20px;
   justify-content: end;
   transition: 0.3s;
   z-index: 10;
@@ -39,6 +39,10 @@
   color: rgb(157, 157, 157);
 }
 
+#mobile-block{
+  display: none;
+}
+
 @media (max-width: 980px) {
 
   .footer-box{
@@ -63,6 +67,14 @@
     width: 500px;
     margin-top: 110px;
     margin-left: 25px;
+  }
+
+  #mobile-block{
+    display: block;
+    margin-top: -50px;
+    width: 980px;
+    height: 250px;
+    background-color: white;
   }
 
 }

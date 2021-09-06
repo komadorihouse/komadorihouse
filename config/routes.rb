@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       get 'works' 
     end
     member do
+      get 'zoom'
+    end
+    member do
       get 'creater'
     end
     member do

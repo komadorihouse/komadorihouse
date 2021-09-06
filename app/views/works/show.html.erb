@@ -3,57 +3,60 @@
 </div>
 
 <div class="body">
-<%# ここから左辺の目次欄 %>
+  <%# ここから左辺の目次欄 %>
   <div class="index-show">
     <%= render "shared/works_index"%>
   </div>
   <%# ここからメインコンテンツ表示域 %>
-<div id="work-right-view">
-  <div class="works-info">
-      Overview
-  </div>
-  
-  <div class="contents-body-show">
-      <ul id="work-show">
-        <li>
-          <div id="contents-title"><%= @item.title %></div>
-        </li>
-        <li>
-          <span class="small">Creater -</span><span class="showtext"><%= @creater %></span>
-        </li>
-        <li>
-          <span class="small">Created yaer -</span><span class="showtext"> <%= @item.created_year %></span>
-        </li>
-        <li>
-          <div class="showtext">
-            <%= simple_format(@item.description) %>
-          </div>
-        </li>
-      </ul>
-      <ul>
-          <% if @item.youtube.present? %>
-        <li class="work-image-list">   
-          <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </li>
-          <% end %>
-        <li class="work-image-list">
-          <% if @item.images[1].present? %>
-            <div id="slide-btn">
-              <div id="left-btn">＜</div>
-              <div id="right-btn">＞</div>
+  <div id="work-right-view">
+    <div class="works-info">
+        Overview
+    </div>
+    
+    <div class="contents-body-show">
+        <ul id="work-show">
+          <li>
+            <div id="contents-title"><%= @item.title %></div>
+          </li>
+          <li>
+            <span class="small">Creater -</span><span class="showtext"><%= @creater %></span>
+          </li>
+          <li>
+            <span class="small">Created yaer -</span><span class="showtext"> <%= @item.created_year %></span>
+          </li>
+          <li>
+            <div class="showtext">
+              <%= simple_format(@item.description) %>
             </div>
-          <% end %>
-          <% @item.images.each_with_index do |image,i|%>
-            <%= image_tag (image),class:"work-image" ,id:"img-#{i+1}"%>
-          <% end %>
-        </li>
-      </ul>
-  </div>
+          </li>
+        </ul>
+        <ul>
+            <% if @item.youtube.present? %>
+          <li class="work-image-list">   
+            <iframe id="youtube" src="https://www.youtube.com/embed/<%= @item.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+            <% end %>
+          <li class="work-image-list">
+            <% if @item.images[1].present? %>
+              <div id="slide-btn">
+                <div id="left-btn">＜</div>
+                <div id="right-btn">＞</div>
+              </div>
+            <% end %>
+              <% @item.images.each_with_index do |image,i|%>
+                <%= image_tag (image),class:"work-image" ,id:"img-#{i+1}"%>
+              <% end %>
+          </li>
+        </ul>
+    </div>
 
-  <div class="footer-area">
-    <%= render "shared/footer"%>
+    <div class="footer-area">
+      <%= render "shared/footer"%>
+    </div>
   </div>
 </div>
 <div id="page_top" style="display: none;">
   Page Top
+</div>
+<div id="mobile-block">
 </div>
