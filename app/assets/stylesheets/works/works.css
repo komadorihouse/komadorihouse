@@ -559,6 +559,13 @@ html{
   font-weight: 200;
 }
 
+#news-contents-show{
+  width: 600px;
+  height: auto;
+  padding: 50px;
+  font-weight: 200;
+}
+
 .blog-head{
   display: flex;
 }
@@ -881,6 +888,13 @@ html{
     font-weight: 200;
   }
 
+  #news-contents-show{
+    width: 824px;
+    height: auto;
+    margin-top: 50px;
+    font-weight: 200;
+  }
+
   .blog-date{
     font-size: 20px;
   }
@@ -1051,8 +1065,6 @@ html{
     padding-right: 50px;
     font-weight: 300;
     width: 880px;
-    position: absolute;
-    bottom: -10px; 
     background-color: white;
   }
 
@@ -1119,6 +1131,10 @@ html{
   .profile-border{
     margin-top: 200px;
     margin-bottom: 200px;
+  }
+
+  #news-show-footer{
+    display: none;
   }
 
   /* 以下プロフィール */
