@@ -929,6 +929,13 @@ html{
     align-items: flex-start;
   }
 
+  /* 以下タブレットlink */
+
+  .link-body{
+    margin-top: 50px;
+  }
+
+
 }
 
 
