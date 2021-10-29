@@ -24,5 +24,11 @@
     <%= f.label "記事の内容1",for:"text_1" %>
     <%= f.text_area :text_1, class:"works-text", id:"text" ,placeholder:"記事の内容1" %>
 
+    <%= f.label "リンク文字",for:"text_2" %>
+    <%= f.text_field :text_2, class:"works-text", id:"title" ,placeholder:"こちらをクリック" %>
+
+    <%= f.label "リンク先URL",for:"image_2" %>
+    <%= f.text_field :image_2, class:"works-text", id:"title" ,placeholder:"https://komadorihouse.herokuapp.com/" %>
+
     <%= f.submit "記事を登録" ,class:"works-text" %>
   <% end %>

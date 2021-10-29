@@ -189,10 +189,11 @@ $(function(){
   // pege top btn
   var pageTop = $('#page_top');
   var appear = false;
-
+  
   $(window).scroll(function(){
     if($(this).scrollTop() > 400 ){
         pageTop.show();
+        console.log($(this).scrollTop());
     }else{
         pageTop.hide();
     }
