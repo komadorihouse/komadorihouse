@@ -87,6 +87,8 @@ class WorksController < ApplicationController
     @info = Creater.find(params[:id]).name
     @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(21).order('created_year DESC')
     @body_info = "#{@info} Works"
+    @creater_id = params[:id]
+    binding.pry
     if params.has_key?(:contents)
       render 'contents'
     else
@@ -110,6 +112,7 @@ class WorksController < ApplicationController
   end
 
   def show
+    @creater_id = params[:creater]
     @workslist = Work.page(params[:index]).per(21).order('created_year DESC')
     @item = Work.find(params[:id])
     @work = Work.find(params[:id]).image
