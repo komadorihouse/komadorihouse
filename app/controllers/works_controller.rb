@@ -62,8 +62,8 @@ class WorksController < ApplicationController
     @type = Type.all
     @creaters = Creater.all
     @info = "Works"
-    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
-    @works = Work.page(params[:contents]).per(20).order('created_year DESC')
+    @workslist = Work.page(params[:index]).per(20).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
+    @works = Work.page(params[:contents]).per(20).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
     @body_info = "All Works"
     if request.xhr?
       if params.has_key?(:index)

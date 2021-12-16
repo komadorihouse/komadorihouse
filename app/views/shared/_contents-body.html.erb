@@ -1,6 +1,5 @@
 <% if @kinari %>
   <% @works.each do |work| %>
-    <% unless work.artist_id == 0 || work.artist_id == 4 || work.artist_id == 5  %>
       <div class="content">
         <div>
           <% work.images.each_with_index do |image,index| %>
@@ -13,11 +12,9 @@
           <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
         </div>
       </div>
-    <% end %>
   <% end %>
 <% else %>
   <% @works.each do |work| %>
-    <% unless work.artist_id == 0 || work.artist_id == 3 || work.artist_id == 4 || work.artist_id == 5 || work.artist_id == 8 %>
       <div class="content">
         <div>
           <% work.images.each_with_index do |image,index| %>
@@ -30,6 +27,5 @@
           <span class="title-work"><%= link_to work.title , work_path(work.id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
         </div>
       </div>
-    <% end %>
   <% end %>
 <% end %>
