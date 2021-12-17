@@ -4,12 +4,12 @@
         <div>
           <% work.images.each_with_index do |image,index| %>
             <% if index == 0 %>
-              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id , creater: @creater_id)%>
+              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id , creater: @creater_id, :serch => @artist_search)%>
             <% end %>
           <% end %>
         </div>
         <div class="content-title">
-          <span class="title-work"><%= link_to work.title , work_path(work.id, creater: @creater_id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
+          <span class="title-work"><%= link_to work.title , work_path(work.id, creater: @creater_id, :serch => @artist_search)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
         </div>
       </div>
   <% end %>
@@ -19,12 +19,12 @@
         <div>
           <% work.images.each_with_index do |image,index| %>
             <% if index == 0 %>
-              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id, creater: @creater_id)%>
+              <%= link_to image_tag(image,class:"content-image") ,work_path(work.id, creater: @creater_id, :serch => @artist_search)%>
             <% end %>
           <% end %>
         </div>
         <div class="content-title">
-          <span class="title-work"><%= link_to work.title , work_path(work.id, creater: @creater_id)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id) %></span>
+          <span class="title-work"><%= link_to work.title , work_path(work.id, creater: @creater_id, :serch => @artist_search)%></span><span class="date-work"><%= link_to work.created_year ,work_path(work.id, :serch => @artist_search) %></span>
         </div>
       </div>
   <% end %>
