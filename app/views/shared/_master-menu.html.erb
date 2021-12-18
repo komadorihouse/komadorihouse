@@ -9,6 +9,7 @@
     <%= link_to(creater_work_path(creater.id), remote: true) do %>
       <li id="artist-name" class="artist-name <%= "a#{creater.id}" %>">
         <%= creater.name  %>
+        <%#comitt用削除可%>
       </li>
     <% end %>
   <% end %>

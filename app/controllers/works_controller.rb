@@ -58,7 +58,7 @@ class WorksController < ApplicationController
     redirect_to action: :list
   end
 
-  def works#commit2021/12/18-09:28
+  def works
     if params.has_key?(:back) #atist別でshowからもどるとき
       @creater_id = params[:back].to_i
       @info = Creater.find(@creater_id).name
