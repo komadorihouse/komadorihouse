@@ -59,7 +59,7 @@ class WorksController < ApplicationController
   end
 
   def works
-    if params.has_key?(:back) #atist別でshowからもどるとき comitt実験用
+    if params.has_key?(:back) #atist別でshowからもどるとき comitt実験用  export PATH="/usr/local/opt/node@14/bin:$PATH"      memo version=>14.18.2
       @creater_id = params[:back].to_i
       @info = Creater.find(@creater_id).name
       @workslist = Work.page(params[:index]).per(21).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
