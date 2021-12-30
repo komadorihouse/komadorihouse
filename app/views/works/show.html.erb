@@ -48,6 +48,20 @@
               <% end %>
           </li>
         </ul>
+          <% if @artist_search == 1%>
+            <%= link_to works_works_path(:back => @item.artist_id) do %>
+            <div class="back-btn">
+              Back
+            </div>
+          <%end%>
+        <%else%>
+          <%= link_to works_works_path do %>
+            <div class="back-btn">
+              Back
+            </div>
+          <%end%>
+        <%end%>
+        </div>
     </div>
 
     <div class="footer-area">

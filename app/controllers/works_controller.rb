@@ -60,12 +60,26 @@ class WorksController < ApplicationController
 
   def works
     @type = Type.all
-    @creaters = Creater.all #commit 12-31
-    @info = "Works"
-    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
-    @works = Work.page(params[:contents]).per(20).order('created_year DESC')
-    @body_info = "All Works"
-    if request.xhr?
+    if params.has_key?(:back) #atist別でshowからもどるとき
+      @creater_id = params[:back].to_i
+      @info = Creater.find(@creater_id).name
+      @workslist = Work.page(params[:index]).per(21).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
+      @works = Work.page(params[:contents]).per(21).where("artist_id = #{@creater_id}" ).order('created_year DESC')
+      @body_info = "#{ @info } Works"
+      @creaters = Creater.all
+      @type = Type.all
+      @artist_search = 1
+    else #通常の遷移
+      @type = Type.all
+      @creaters = Creater.all
+      @info = "Works"
+      @workslist = Work.page(params[:index]).per(21).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
+      @works = Work.page(params[:contents]).per(21).where("artist_id != 3 and artist_id != 8").order('created_year DESC')
+      @body_info = "All Works"
+      @artist_search = 0
+    end
+
+    if request.xhr? #非同期通信時
       if params.has_key?(:index)
         render "lists"
       elsif params.has_key?(:contents)
@@ -85,8 +99,11 @@ class WorksController < ApplicationController
     @type = Type.all
     @creaters = Creater.all
     @info = Creater.find(params[:id]).name
-    @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+    @works = Work.where(artist_id: params[:id]).page(params[:contents]).per(21).order('created_year DESC')
     @body_info = "#{@info} Works"
+    @creater_id = params[:id]
+    @artist_search = 1
+
     if params.has_key?(:contents)
       render 'contents'
     else
@@ -97,10 +114,10 @@ class WorksController < ApplicationController
   def types
     if params[:id].to_i == 0
       @info = "All Works"
-      @works = Work.page(params[:contents]).per(20).order('created_year DESC')
+      @works = Work.page(params[:contents]).per(21).order('created_year DESC')
     else
       @info = Type.find(params[:id]).name
-      @works = Work.where(type_id: params[:id]).page(params[:contents]).per(20).order('created_year DESC')
+      @works = Work.where(type_id: params[:id]).page(params[:contents]).per(21).order('created_year DESC')
     end
     @body_info = "#{@info}"
     render 'creater'
@@ -110,11 +127,20 @@ class WorksController < ApplicationController
   end
 
   def show
-    @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
+    @creater_id = params[:creater]
+    @workslist = Work.page(params[:index]).per(21).order('created_year DESC')
     @item = Work.find(params[:id])
     @work = Work.find(params[:id]).image
     @creater = Creater.find(@item.artist_id).name
     @info = @item.title
+    serch = params[:serch].to_i
+
+    if serch == 1
+      @artist_search = 1
+    else
+      @artist_search = 0
+    end
+
     if request.xhr?
       if params.has_key?(:index)
         render "lists"
@@ -145,7 +171,7 @@ class WorksController < ApplicationController
   def list
     judge_ip
     @work = "1z0jPhBvysuBn4MmX73UWNTo0THdb6Tml"
-    @workslist = Work.page(params[:list]).per(20).order('created_year DESC')
+    @workslist = Work.page(params[:list]).per(1).order('created_year DESC')
   end
 
   def show_mail
