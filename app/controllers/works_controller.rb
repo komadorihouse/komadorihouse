@@ -60,7 +60,7 @@ class WorksController < ApplicationController
 
   def works
     @type = Type.all
-    @creaters = Creater.all #commit 12-31
+    @creaters = Creater.all #commit 12-31 02
     @info = "Works"
     @workslist = Work.page(params[:index]).per(20).order('created_year DESC')
     @works = Work.page(params[:contents]).per(20).order('created_year DESC')
