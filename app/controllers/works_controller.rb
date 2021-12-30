@@ -59,7 +59,6 @@ class WorksController < ApplicationController
   end
 
   def works
-    @type = Type.all
     if params.has_key?(:back) #atist別でshowからもどるとき
       @creater_id = params[:back].to_i
       @info = Creater.find(@creater_id).name
